@@ -1,0 +1,198 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "eb6e66b6-2df0-4872-8f92-4c510b34f8fe")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 93.98 93.98)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "58ca81b1-4ff8-49ea-a8fc-6cd2a9c20a6b")
+		(property "Sheetname" "MCU"
+			(at 93.98 93.2684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 93.98 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 46.99 157.48)
+		(size 13.97 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "88eb76e9-c2ae-4982-8eef-c2fa556b1d90")
+		(property "Sheetname" "HV"
+			(at 46.99 156.7684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "hv.kicad_sch"
+			(at 46.99 169.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 163.83 85.09)
+		(size 15.24 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07")
+		(property "Sheetname" "CAN_BUS"
+			(at 163.83 84.3784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "can_bus.kicad_sch"
+			(at 163.83 98.3746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 67.31)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f2ffdc0d-50d8-4a85-929e-edddefffb681")
+		(property "Sheetname" "PWR"
+			(at 93.98 66.5984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pwr.kicad_sch"
+			(at 93.98 80.5946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
