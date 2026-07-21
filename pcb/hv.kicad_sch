@@ -2658,8 +2658,8 @@
 		)
 		(uuid "56d5452a-91ec-4272-931f-f36c7971eaa1")
 	)
-	(hierarchical_label "GM_OUT"
-		(shape input)
+	(hierarchical_label "COMP_GM"
+		(shape output)
 		(at 201.93 127 0)
 		(effects
 			(font
@@ -2670,7 +2670,7 @@
 		(uuid "1e83f5af-301f-4870-99a8-467da32e9c45")
 	)
 	(hierarchical_label "HV_meas"
-		(shape input)
+		(shape output)
 		(at 91.44 133.35 180)
 		(effects
 			(font
@@ -2680,7 +2680,7 @@
 		)
 		(uuid "2b77a0fb-4134-44fb-8b98-447df3d77623")
 	)
-	(hierarchical_label "V_IN"
+	(hierarchical_label "+5V"
 		(shape input)
 		(at 60.96 27.94 180)
 		(effects
@@ -3361,7 +3361,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "245686bd-37e1-45e4-a1e9-43f57da05ae3")
-		(property "Reference" "CATHODE"
+		(property "Reference" "CATHODE1"
 			(at 141.478 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3421,7 +3421,7 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/88eb76e9-c2ae-4982-8eef-c2fa556b1d90"
-					(reference "CATHODE")
+					(reference "CATHODE1")
 					(unit 1)
 				)
 			)
@@ -3920,7 +3920,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4a6e28ce-5262-4f3c-b173-4e753596bd3b")
-		(property "Reference" "ANODE"
+		(property "Reference" "ANODE1"
 			(at 142.494 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3980,7 +3980,7 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/88eb76e9-c2ae-4982-8eef-c2fa556b1d90"
-					(reference "ANODE")
+					(reference "ANODE1")
 					(unit 1)
 				)
 			)

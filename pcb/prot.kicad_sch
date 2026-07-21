@@ -3250,7 +3250,7 @@
 		(uuid "ffef807a-93b4-4dce-94f8-4a2210ebe389")
 	)
 	(hierarchical_label "CAN_L"
-		(shape input)
+		(shape bidirectional)
 		(at 200.66 110.49 0)
 		(effects
 			(font
@@ -3261,7 +3261,7 @@
 		(uuid "52f74ede-11ac-4a11-aebe-1aa0ed311885")
 	)
 	(hierarchical_label "V_zas"
-		(shape input)
+		(shape output)
 		(at 217.17 73.66 0)
 		(effects
 			(font
@@ -3272,7 +3272,7 @@
 		(uuid "bb21cd0a-6b11-4bfd-bcc1-de784e0b0bf1")
 	)
 	(hierarchical_label "CAN_H"
-		(shape input)
+		(shape bidirectional)
 		(at 200.66 95.25 0)
 		(effects
 			(font

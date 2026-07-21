@@ -2888,7 +2888,7 @@
 		(uuid "665ba770-b5bb-4ca1-be7a-9d02f51a54b8")
 	)
 	(hierarchical_label "CAN_H"
-		(shape input)
+		(shape bidirectional)
 		(at 205.74 77.47 0)
 		(effects
 			(font
@@ -2910,7 +2910,7 @@
 		(uuid "82b58101-b8dd-414a-ad2a-c23654e91807")
 	)
 	(hierarchical_label "CAN_L"
-		(shape input)
+		(shape bidirectional)
 		(at 205.74 80.01 0)
 		(effects
 			(font
@@ -2921,7 +2921,7 @@
 		(uuid "b648017a-b50e-4036-bf67-6c72e21a8c82")
 	)
 	(hierarchical_label "CAN_RX"
-		(shape input)
+		(shape output)
 		(at 102.87 80.01 180)
 		(effects
 			(font
@@ -3280,7 +3280,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7pF"
+		(property "Value" "4.7nF"
 			(at 189.23 133.3499 0)
 			(show_name no)
 			(do_not_autoplace no)

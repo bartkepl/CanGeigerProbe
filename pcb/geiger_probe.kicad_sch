@@ -292,6 +292,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 58.42) (xy 160.02 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02792115-141e-4499-9be0-eb19251de850")
+	)
+	(wire
+		(pts
 			(xy 185.42 46.99) (xy 215.9 46.99)
 		)
 		(stroke
@@ -362,16 +372,6 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 49.53) (xy 160.02 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3cf2d758-460c-4878-a7e3-e9d62a68e680")
-	)
-	(wire
-		(pts
 			(xy 134.62 52.07) (xy 130.81 52.07)
 		)
 		(stroke
@@ -402,7 +402,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 54.61) (xy 147.32 54.61)
+			(xy 130.81 55.88) (xy 160.02 55.88)
 		)
 		(stroke
 			(width 0)
@@ -522,13 +522,13 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 54.61) (xy 147.32 49.53)
+			(xy 130.81 60.96) (xy 160.02 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9147af20-bbea-4bb8-a013-b8610ed9f5be")
+		(uuid "8eca9642-1d40-4ad3-a4db-f541b8e70605")
 	)
 	(wire
 		(pts
@@ -824,7 +824,7 @@
 				(justify right)
 			)
 		)
-		(pin "CAN_R_CTRL" input
+		(pin "CAN_R_CTRL" output
 			(at 185.42 59.69 0)
 			(uuid "e89560ba-864d-412a-b45c-cb71351c7ec7")
 			(effects
@@ -834,7 +834,7 @@
 				(justify right)
 			)
 		)
-		(pin "CAN_STBY" input
+		(pin "CAN_STBY" output
 			(at 185.42 57.15 0)
 			(uuid "10ec8df0-1c20-4256-9aca-546179e9495f")
 			(effects
@@ -844,7 +844,7 @@
 				(justify right)
 			)
 		)
-		(pin "CAN_TX" input
+		(pin "CAN_TX" output
 			(at 185.42 62.23 0)
 			(uuid "c949511b-52ab-4564-807d-98465502b924")
 			(effects
@@ -854,7 +854,7 @@
 				(justify right)
 			)
 		)
-		(pin "COMP_GM_IN" input
+		(pin "COMP_GM" input
 			(at 185.42 52.07 0)
 			(uuid "32fec1da-6e98-4afc-ada0-3083b3ea2d64")
 			(effects
@@ -864,7 +864,7 @@
 				(justify right)
 			)
 		)
-		(pin "FBACK_CTRL" input
+		(pin "FBACK_CTRL" output
 			(at 185.42 46.99 0)
 			(uuid "5c139071-1786-42cb-a5d3-93afa4c831a1")
 			(effects
@@ -885,8 +885,28 @@
 			)
 		)
 		(pin "VIN_SENSE" input
-			(at 160.02 49.53 180)
+			(at 160.02 55.88 180)
 			(uuid "1ed8556a-2e12-4daf-a4e2-048ac178651c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "I_SENS" input
+			(at 160.02 58.42 180)
+			(uuid "38310524-cba8-4654-818b-23cd9c16e842")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EN_I_SENS" output
+			(at 160.02 60.96 180)
+			(uuid "44f270e7-ffb4-4d07-8266-aab387eb9b9a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -940,7 +960,7 @@
 				(justify left top)
 			)
 		)
-		(pin "CAN_H" input
+		(pin "CAN_H" bidirectional
 			(at 101.6 55.88 0)
 			(uuid "6b5fc8b1-a208-4f22-aed5-65434ce49cfd")
 			(effects
@@ -950,7 +970,7 @@
 				(justify right)
 			)
 		)
-		(pin "CAN_L" input
+		(pin "CAN_L" bidirectional
 			(at 101.6 58.42 0)
 			(uuid "1e44df1f-1f02-443d-b4ed-aefc678c2e6f")
 			(effects
@@ -960,7 +980,7 @@
 				(justify right)
 			)
 		)
-		(pin "V_zas" input
+		(pin "V_zas" output
 			(at 101.6 49.53 0)
 			(uuid "8ea582e6-870d-4b18-81b7-421cdf374e4a")
 			(effects
@@ -1016,7 +1036,7 @@
 				(justify left top)
 			)
 		)
-		(pin "GM_OUT" input
+		(pin "COMP_GM" output
 			(at 215.9 52.07 180)
 			(uuid "f42cb1e1-88ce-4656-b363-095728069b7b")
 			(effects
@@ -1026,7 +1046,7 @@
 				(justify left)
 			)
 		)
-		(pin "HV_meas" input
+		(pin "HV_meas" output
 			(at 215.9 49.53 180)
 			(uuid "2bea751f-709c-45ae-8c2a-402373d09e7c")
 			(effects
@@ -1036,7 +1056,7 @@
 				(justify left)
 			)
 		)
-		(pin "V_IN" input
+		(pin "+5V" input
 			(at 215.9 40.64 180)
 			(uuid "cd55892a-2237-4cef-8592-ca130c996296")
 			(effects
@@ -1102,7 +1122,7 @@
 				(justify left top)
 			)
 		)
-		(pin "CAN_H" input
+		(pin "CAN_H" bidirectional
 			(at 162.56 90.17 180)
 			(uuid "e42fb353-7304-4561-a66f-c7611b8a426f")
 			(effects
@@ -1112,7 +1132,7 @@
 				(justify left)
 			)
 		)
-		(pin "CAN_L" input
+		(pin "CAN_L" bidirectional
 			(at 162.56 92.71 180)
 			(uuid "b59709f6-9406-45b4-894a-da9fe07d59d7")
 			(effects
@@ -1122,7 +1142,7 @@
 				(justify left)
 			)
 		)
-		(pin "CAN_RX" input
+		(pin "CAN_RX" output
 			(at 182.88 92.71 0)
 			(uuid "cf3e716c-c668-4f19-9bcc-6ab1b05c2815")
 			(effects
@@ -1172,7 +1192,7 @@
 	)
 	(sheet
 		(at 115.57 46.99)
-		(size 15.24 10.16)
+		(size 15.24 16.51)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1198,7 +1218,7 @@
 			)
 		)
 		(property "Sheetfile" "pwr.kicad_sch"
-			(at 115.57 57.7346 0)
+			(at 115.57 64.0846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1218,7 +1238,7 @@
 				(justify left)
 			)
 		)
-		(pin "+3.3V" input
+		(pin "+3.3V" output
 			(at 130.81 52.07 0)
 			(uuid "96397724-b2e1-4bc4-b07a-89b9e09080fb")
 			(effects
@@ -1228,7 +1248,7 @@
 				(justify right)
 			)
 		)
-		(pin "+5V" input
+		(pin "+5V" output
 			(at 130.81 49.53 0)
 			(uuid "0828aac4-de2c-4143-9817-15a19e271c98")
 			(effects
@@ -1238,9 +1258,29 @@
 				(justify right)
 			)
 		)
-		(pin "VIN_SENSE" input
-			(at 130.81 54.61 0)
+		(pin "VIN_SENSE" output
+			(at 130.81 55.88 0)
 			(uuid "e09dcb16-2ea9-4684-9da9-9fe184b5b66d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "EN_I_SENS" input
+			(at 130.81 60.96 0)
+			(uuid "c00b3779-db15-41a2-ad91-b045e6466cb1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I_SENS" output
+			(at 130.81 58.42 0)
+			(uuid "b72d1283-a1cd-4d14-9390-ba1577089f62")
 			(effects
 				(font
 					(size 1.27 1.27)
