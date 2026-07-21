@@ -1934,6 +1934,12 @@
 		(uuid "434e472c-fccb-45e9-ba47-b507e85d4c1b")
 	)
 	(junction
+		(at 193.04 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "467c1148-6355-4c82-9375-5aa499545e12")
+	)
+	(junction
 		(at 250.19 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1994,6 +2000,12 @@
 		(uuid "6a54c5e5-2d93-4b7a-9ce3-a6bfa17e9201")
 	)
 	(junction
+		(at 170.18 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6c771a5b-7ef7-4f84-b65e-8b5964ceebb9")
+	)
+	(junction
 		(at 166.37 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2012,12 +2024,6 @@
 		(uuid "886bc252-675a-49e3-82a7-2680e4c1d225")
 	)
 	(junction
-		(at 193.04 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8aa1e22c-201e-42dd-a99d-7e5c8aee0c5c")
-	)
-	(junction
 		(at 224.79 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2028,6 +2034,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96799523-2b59-473c-870b-d9ebb2729614")
+	)
+	(junction
+		(at 186.69 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9a1056e9-988f-44e6-b40c-5b369c7abeb3")
 	)
 	(junction
 		(at 72.39 59.69)
@@ -2405,6 +2417,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 118.11) (xy 172.72 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44fa0aa2-b2cc-42a5-92c5-11db38050b60")
+	)
+	(wire
+		(pts
 			(xy 66.04 113.03) (xy 72.39 113.03)
 		)
 		(stroke
@@ -2515,6 +2537,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 118.11) (xy 182.88 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5521099f-6ad0-4b8e-8a94-99b60525e678")
+	)
+	(wire
+		(pts
 			(xy 180.34 59.69) (xy 185.42 59.69)
 		)
 		(stroke
@@ -2575,7 +2607,17 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 128.27) (xy 193.04 130.81)
+			(xy 170.18 128.27) (xy 186.69 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62fa47d5-9456-499b-a058-bdecf7ad5100")
+	)
+	(wire
+		(pts
+			(xy 193.04 128.27) (xy 193.04 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2785,6 +2827,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 118.11) (xy 170.18 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8859ae82-09a0-4410-b74c-e738a56f5dd9")
+	)
+	(wire
+		(pts
 			(xy 185.42 59.69) (xy 194.31 59.69)
 		)
 		(stroke
@@ -2915,7 +2967,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 118.11) (xy 182.88 118.11)
+			(xy 165.1 118.11) (xy 170.18 118.11)
 		)
 		(stroke
 			(width 0)
@@ -3235,6 +3287,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 127) (xy 170.18 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e82ae385-65de-4c83-83d8-a3fbb0bde9b0")
+	)
+	(wire
+		(pts
 			(xy 241.3 95.25) (xy 241.3 96.52)
 		)
 		(stroke
@@ -3397,7 +3459,7 @@
 	)
 	(hierarchical_label "I_SENS"
 		(shape output)
-		(at 176.53 118.11 180)
+		(at 165.1 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4089,6 +4151,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 176.53 118.11 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "41d97a9e-a53f-4594-a8f3-39f321099749")
+		(property "Reference" "R28"
+			(at 176.53 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 176.53 121.92 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 176.53 116.332 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 176.53 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "98ec069a-3a1a-46ff-9657-2f5f9d34eaa9")
+		)
+		(pin "1"
+			(uuid "5293d7ac-5d37-40c1-8632-99da549096ec")
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f2ffdc0d-50d8-4a85-929e-edddefffb681"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SamacSys_Parts:LT8606IDC#TRPBF")
 		(at 111.76 57.15 0)
 		(unit 1)
@@ -4277,7 +4419,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 193.04 130.81 0)
+		(at 193.04 134.62 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4288,7 +4430,7 @@
 		(fields_autoplaced yes)
 		(uuid "436de987-0818-4312-9c40-a9e3db9b76ad")
 		(property "Reference" "#PWR031"
-			(at 193.04 137.16 0)
+			(at 193.04 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4299,7 +4441,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 135.89 0)
+			(at 193.04 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4309,7 +4451,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 130.81 0)
+			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4320,7 +4462,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 130.81 0)
+			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4331,7 +4473,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 130.81 0)
+			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4998,6 +5140,88 @@
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f2ffdc0d-50d8-4a85-929e-edddefffb681"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 170.18 123.19 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8fef573a-96eb-432c-bf9c-d761c369040e")
+		(property "Reference" "C44"
+			(at 166.37 121.9199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1n"
+			(at 166.37 124.4599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 171.1452 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 170.18 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a531c7a5-3649-410a-bcc9-cf94ff7a64fd")
+		)
+		(pin "2"
+			(uuid "ba5578b0-079e-4a83-a40f-8bf3bfafbbcc")
+		)
+		(instances
+			(project "geiger_probe"
+				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f2ffdc0d-50d8-4a85-929e-edddefffb681"
+					(reference "C44")
 					(unit 1)
 				)
 			)
@@ -6254,7 +6478,7 @@
 				)
 			)
 		)
-		(property "Footprint" "INA186A4IDCKR:SOT65P210X110-6N"
+		(property "Footprint" "lib_local:SOT65P210X110-6N"
 			(at 195.58 118.11 0)
 			(hide yes)
 			(show_name no)

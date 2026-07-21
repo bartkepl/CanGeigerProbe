@@ -4456,7 +4456,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-8N"
+		(property "Footprint" "SamacSys_Parts:SOIC127P600X175-8N"
 			(at 137.16 169.85 0)
 			(hide yes)
 			(show_name no)
