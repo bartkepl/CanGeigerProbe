@@ -3648,6 +3648,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "0603N100J500CT"
+			(at 160.02 69.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3c504864-62f2-4710-b7a8-f8d40dce5ad9")
 		)
@@ -3801,6 +3812,17 @@
 		)
 		(property "Description" "CS0603-0R50-1%-HP"
 			(at 218.44 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CS0603-0R50-1%-HP"
+			(at 218.44 59.69 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4122,6 +4144,17 @@
 			)
 		)
 		(property "Description" "250mA Low Quiscent Current LDO, 3.3V output, SOT-89"
+			(at 87.63 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "MCP1700T-3302E/MB"
 			(at 87.63 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -4961,6 +4994,17 @@
 		)
 		(property "Description" "LQH32PN6R8NN0L"
 			(at 96.52 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LQH32PN6R8NN0L"
+			(at 96.52 59.69 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6350,6 +6394,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BAV199"
+			(at 266.7 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3a93db7f-2264-4730-95a9-73c5a3f84597")
 		)
@@ -6655,6 +6710,17 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+			)
+		)
+		(property "Manufacturer_Part_Number" "INA186A4IDCKR"
+			(at 195.58 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"

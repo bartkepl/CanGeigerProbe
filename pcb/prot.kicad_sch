@@ -3433,6 +3433,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "PMEG6030EP"
+			(at 161.29 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d63a0454-9d5b-43d3-ad07-45eccd6f3c54")
 		)
@@ -3515,6 +3526,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "SMBJ33CA"
+			(at 124.46 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f08b6852-b994-473a-9706-1a15f64899e5")
 		)
@@ -3537,7 +3559,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -4096,6 +4118,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "SN010-60"
+			(at 111.76 71.12 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1fd74ae9-16f1-489b-a4a6-a733cba1e911")
 		)
@@ -4200,6 +4233,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "SMBJ36A-13-F"
+			(at 173.99 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0d81a7e8-54a9-4f76-9d2a-01b505344b5f")
 		)
@@ -4271,6 +4315,17 @@
 		)
 		(property "Description" "BLM31PG601SN1L"
 			(at 135.89 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "BLM31PG601SN1L"
+			(at 135.89 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4375,6 +4430,17 @@
 		)
 		(property "Sim.Pins" "1=K 2=A"
 			(at 149.86 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SMBJ36A-13-F"
+			(at 149.86 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4628,6 +4694,17 @@
 			)
 		)
 		(property "Description" "Leiditech 3R090-5S"
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "Leiditech 3R090-5S"
 			(at 102.87 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -5036,6 +5113,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "Leiditech 3R090-5S"
+			(at 102.87 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "81300812-4f09-4342-bc73-71cb772dc950")
 		)
@@ -5118,6 +5206,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BLM31PG601SN1L"
+			(at 135.89 88.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "0fc59a37-d2e6-4e1d-bb6d-96d1642e2f3b")
 		)
@@ -5191,6 +5290,17 @@
 		)
 		(property "Description" "CDSOT23-T24CAN"
 			(at 130.81 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CDSOT23-T24CAN"
+			(at 130.81 104.14 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

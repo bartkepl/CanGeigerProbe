@@ -4801,6 +4801,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BSS138"
+			(at 156.21 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "35df253d-7c1e-4a76-9625-f7df16c80311")
 		)

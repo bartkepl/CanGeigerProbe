@@ -4366,6 +4366,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BAT54J"
+			(at 74.93 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "391ca42e-3432-49cb-bbfe-320c15bb3030")
 		)
@@ -5398,6 +5409,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "STM32L432KCU6"
+			(at 148.59 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d38bbadf-2d0d-40f6-a79a-02b19be96a10")
 		)
@@ -5664,6 +5686,17 @@
 		)
 		(property "Sim.Pins" ""
 			(at 151.13 38.1 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "WLBD1608HCU101TL"
+			(at 151.13 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6577,6 +6610,17 @@
 				)
 			)
 		)
+		(property "Manufacturer_Part_Number" "MS621FE-FL11E"
+			(at 52.07 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "aa6a449b-fcde-4f28-aad8-c33e745dbdd4")
 		)
@@ -6725,6 +6769,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 52.07 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "WTL1X80739BEL"
 			(at 52.07 95.25 90)
 			(hide yes)
 			(show_name no)
