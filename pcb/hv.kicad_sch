@@ -3005,6 +3005,26 @@
 		)
 		(uuid "feaabd08-7f6b-4536-ac0f-476b3e50e9fb")
 	)
+	(label "HV+_L"
+		(at 67.31 105.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b74fe4c-60b8-4238-a477-343e37566e17")
+	)
+	(label "HV+_tube"
+		(at 172.72 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "517ebeb0-7ecb-4d62-a094-6da2122981ce")
+	)
 	(label "HV+"
 		(at 137.16 105.41 0)
 		(effects
@@ -3014,6 +3034,16 @@
 			(justify left bottom)
 		)
 		(uuid "56d5452a-91ec-4272-931f-f36c7971eaa1")
+	)
+	(label "HV+_mid_meas"
+		(at 113.03 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "85993dda-5572-440a-8921-c70e7355aba4")
 	)
 	(hierarchical_label "COMP_GM"
 		(shape output)
