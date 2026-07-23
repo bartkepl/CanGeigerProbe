@@ -2823,6 +2823,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2897,6 +2903,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "#PWR027")
 					(unit 1)
 				)
@@ -3060,6 +3072,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "R22")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3215,6 +3233,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "C39")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "C39")
 					(unit 1)
 				)
@@ -3378,6 +3402,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "C32")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3537,6 +3567,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "C40")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3611,6 +3647,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "#PWR069")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "#PWR069")
 					(unit 1)
 				)
@@ -3774,6 +3816,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "R21")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3931,6 +3979,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "R23")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4069,6 +4123,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "U702")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "U702")
 					(unit 1)
 				)
@@ -4257,6 +4317,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "IC2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4414,6 +4480,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "R24")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4492,6 +4564,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4566,6 +4644,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "#PWR036")
 					(unit 1)
 				)
@@ -4729,6 +4813,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "C34")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4824,6 +4914,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "Q2")
 					(unit 1)
 				)
@@ -4987,6 +5083,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "C41")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5142,6 +5244,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "C33")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "C33")
 					(unit 1)
 				)
@@ -5305,6 +5413,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "C35")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5379,6 +5493,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "#PWR025")
 					(unit 1)
 				)
@@ -5461,6 +5581,12 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "#PWR037")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5535,6 +5661,12 @@
 		(instances
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/f06ed4f7-2c6a-44d1-86dd-7ccd2a03be07"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
 					(reference "#PWR028")
 					(unit 1)
 				)
@@ -5681,6 +5813,18 @@
 					(unit 1)
 				)
 			)
+			(project "can_bus"
+				(path "/f04c2156-9b5b-4d66-8760-01d6c2c17270"
+					(reference "U701")
+					(unit 1)
+				)
+			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
