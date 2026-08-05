@@ -1952,12 +1952,6 @@
 		(uuid "e6b12493-8efd-49d1-8c75-c1bf92deed96")
 	)
 	(junction
-		(at 148.59 127)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f188f3f0-24b0-4fcc-ba46-66fe753d0bb8")
-	)
-	(junction
 		(at 172.72 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2048,16 +2042,6 @@
 			(type default)
 		)
 		(uuid "10029954-e892-4c8b-86ce-0a78d5cf8c78")
-	)
-	(wire
-		(pts
-			(xy 168.91 127) (xy 168.91 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14d3af45-d3c5-40e1-8e00-055e2ecff9fd")
 	)
 	(wire
 		(pts
@@ -2171,16 +2155,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 127) (xy 148.59 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "363cfc61-372e-4d8b-9357-9e4d925f22ce")
-	)
-	(wire
-		(pts
 			(xy 95.25 133.35) (xy 95.25 139.7)
 		)
 		(stroke
@@ -2251,16 +2225,6 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 129.54) (xy 148.59 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4433eef8-8599-48b6-96e6-1985a84b09d9")
-	)
-	(wire
-		(pts
 			(xy 234.95 123.19) (xy 234.95 113.03)
 		)
 		(stroke
@@ -2311,16 +2275,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 127) (xy 149.86 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "549959db-d8e3-455d-86d0-1720bfbd9ff2")
-	)
-	(wire
-		(pts
 			(xy 72.39 27.94) (xy 95.25 27.94)
 		)
 		(stroke
@@ -2328,16 +2282,6 @@
 			(type default)
 		)
 		(uuid "556d28da-7732-4b71-b703-98d010e8f44a")
-	)
-	(wire
-		(pts
-			(xy 167.64 127) (xy 168.91 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "614d4877-17fd-444f-9855-168b7ef01191")
 	)
 	(wire
 		(pts
@@ -2818,16 +2762,6 @@
 			(type default)
 		)
 		(uuid "d2268da8-f0e3-45aa-80fc-bdd11087b121")
-	)
-	(wire
-		(pts
-			(xy 147.32 127) (xy 148.59 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4e0c6f6-264f-4865-a3ea-ff8d500c5e74")
 	)
 	(wire
 		(pts
@@ -4423,172 +4357,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SamacSys_Parts:01020071Z")
-		(at 149.86 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4f283660-d252-4ddc-8265-09c6bd7fb6f9")
-		(property "Reference" "F2"
-			(at 158.75 120.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "01020071Z"
-			(at 158.75 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "01020071Z"
-			(at 163.83 223.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://www.littelfuse.com/assetdocs/102-bt-series-datasheet?assetguid=896a24d8-f3d9-44d3-91aa-0a751a3c9fc6"
-			(at 163.83 323.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Fuse Clip 15 A 250V 1 Circuit Cartridge Through Hole"
-			(at 149.86 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "10.67"
-			(at 163.83 523.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "LITTELFUSE"
-			(at 163.83 623.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "01020071Z"
-			(at 163.83 723.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "576-01020071Z"
-			(at 163.83 823.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Littelfuse/01020071Z?qs=hgmQaE9nnAzCBYDQcIezzw%3D%3D"
-			(at 163.83 923.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "01020071Z"
-			(at 163.83 1023.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/01020071z/littelfuse?utm_currency=USD&region=europe"
-			(at 163.83 1123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "2"
-			(uuid "045e2d63-08c5-4af6-b6cc-4f66afe0f932")
-		)
-		(pin "1"
-			(uuid "02e98470-7459-482b-a016-11cfef10cc65")
-		)
-		(instances
-			(project "geiger_probe"
-				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/88eb76e9-c2ae-4982-8eef-c2fa556b1d90"
-					(reference "F2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 64.77 41.91 0)
 		(unit 1)
@@ -4698,7 +4466,7 @@
 				)
 			)
 		)
-		(property "Footprint" "01020071Z"
+		(property "Footprint" "SamacSys_Parts:01020071Z"
 			(at 165.1 42.24 0)
 			(hide yes)
 			(show_name no)
@@ -6470,83 +6238,6 @@
 			(project "geiger_probe"
 				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/88eb76e9-c2ae-4982-8eef-c2fa556b1d90"
 					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x01_Pin")
-		(at 142.24 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ee649551-ee64-4a27-9139-ebba80b06323")
-		(property "Reference" "ANODE2"
-			(at 138.684 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01_Pin"
-			(at 142.875 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x01_P2.00mm_Vertical"
-			(at 142.24 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 142.24 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 142.24 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d2cb0690-dcd8-409f-b838-d3a5cac82a94")
-		)
-		(instances
-			(project "geiger_probe"
-				(path "/eb6e66b6-2df0-4872-8f92-4c510b34f8fe/88eb76e9-c2ae-4982-8eef-c2fa556b1d90"
-					(reference "ANODE2")
 					(unit 1)
 				)
 			)
