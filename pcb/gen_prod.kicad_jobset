@@ -10,7 +10,7 @@
         "drawing_sheet": "",
         "format": "pdf",
         "min_pen_width": 847,
-        "output_filename": "sch/geiger_probe.pdf",
+        "output_filename": "sch/${PROJECTNAME}.pdf",
         "page_size": "auto",
         "pdf_hierarchical_links": true,
         "pdf_metadata": true,
@@ -138,7 +138,7 @@
         ],
         "mirror": false,
         "negative": false,
-        "output_filename": "pcb/geiger_probe.pdf",
+        "output_filename": "pcb/${PROJECTNAME}.pdf",
         "pdf_gen_mode": "one-page-per-layer-one-file",
         "pdf_metadata": true,
         "plot_drawing_sheet": true,
@@ -154,18 +154,6 @@
         "variant": ""
       },
       "type": "pcb_export_pdf"
-    },
-    {
-      "description": "",
-      "id": "3f94476a-2ace-4cd7-80cd-0c1a4c2a47d0",
-      "settings": {
-        "command": "python ${KICAD9_3RD_PARTY}\\plugins\\org_openscopeproject_InteractiveHtmlBom\\generate_interactive_bom.py --dest-dir ${JOBSET_OUTPUT_WORK_PATH}\\ibom --name-format %f_ibom --no-browser --dnp-field kicad_dnp --dark-mode --highlight-pin1 selected --board-rotation 0 --checkboxes Sourced,Placed --bom-view left-right --layer-view FB --sort-order C,R,L,D,Y,X,F,A,Q,T,U,IC,~,K,HS,CNN,P,J,NT,MH,SW --include-tracks --include-nets --show-fields Value,Footprint,Description --group-fields Value --extra-data-file ${PROJECTNAME}.kicad_pcb ${PROJECTNAME}.kicad_pcb",
-        "description": "",
-        "ignore_exit_code": true,
-        "output_filename": "3f94476a-2ace-4cd7-80cd-0c1a4c2a47d0.log",
-        "record_output": false
-      },
-      "type": "special_execute"
     }
   ],
   "meta": {
