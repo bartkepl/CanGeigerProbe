@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "project": "geiger_probe.kicad_pro",
+  "current": "2026-08-19_2121",
+  "runs": {
+    "2026-08-19_2121": {
+      "source_hashes": {
+        "geiger_probe.kicad_sch": "sha256:50a2d4a0410a7faa2e5e6d88d1b68f1fec8c622c6632251622d167a722157da9",
+        "geiger_probe.kicad_pcb": "sha256:5776706b17ed5aabaf6da2eeaa7f5565a3d76d7fd9dd1d38a771110aa0a6fbfc",
+        "schematic.json": "sha256:a7d3fd73839f6b05c3c2fc927a844f0ff413e913de8270598b8842c72eba0c07",
+        "pcb.json": "sha256:a1fd0a40eecc2485dee3db8f8a7ae37408eadc11b3498b196fabd5e8730cf938"
+      },
+      "outputs": {
+        "schematic": "schematic.json",
+        "pcb": "pcb.json",
+        "cross_analysis": "cross_analysis.json",
+        "emc": "emc.json",
+        "thermal": "thermal.json",
+        "gerber": "gerber.json"
+      },
+      "scripts": {
+        "schematic": "analyze_schematic.py geiger_probe.kicad_sch"
+      },
+      "generated": "2026-08-19T21:21:45+02:00",
+      "pinned": false
+    }
+  }
+}

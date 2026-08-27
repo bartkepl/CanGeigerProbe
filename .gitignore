@@ -39,6 +39,9 @@ fp-info-cache
 # Local git-based history (KiCad 9.0+)
 .history
 
+# Loose gerber/drill output -- zipped into prod/*.zip instead
+prod/gerbers/
+
 # Local project settings
 *.kicad_prl
 pcb/ibom.config.ini
