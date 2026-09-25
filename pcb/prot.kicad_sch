@@ -3411,6 +3411,255 @@
 		)
 		(uuid "ffef807a-93b4-4dce-94f8-4a2210ebe389")
 	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 6.35 10.16)
+		(row_heights 2.54 2.54 2.54 2.54 2.54 2.54 2.54)
+		(uuid "25fa8318-c1ad-42ba-9d0b-9414805acd28")
+		(cells
+			(table_cell "J1 pinout"
+				(exclude_from_sim no)
+				(at 38.1 96.52 0)
+				(size 16.51 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 2 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "90267e0d-ab0d-4931-b371-dc09cd3cb2fe")
+			)
+			(table_cell "rgb(240, 240, 240)"
+				(exclude_from_sim no)
+				(at 44.45 96.52 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 0 0)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "80cd3385-6469-4b61-9e51-3f2764234fa6")
+			)
+			(table_cell "Pin"
+				(exclude_from_sim no)
+				(at 38.1 99.06 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "8cef240c-8a6e-48a2-9d93-018ef5785960")
+			)
+			(table_cell "Function"
+				(exclude_from_sim no)
+				(at 44.45 99.06 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "a66e09e1-d237-4914-9a73-a44ad8228c48")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 38.1 101.6 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "bce602f3-328b-46cd-a880-6e18440e2ad7")
+			)
+			(table_cell "VIN"
+				(exclude_from_sim no)
+				(at 44.45 101.6 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "a76a57b5-e4f0-4cf9-96b3-9ca166b5da07")
+			)
+			(table_cell "2"
+				(exclude_from_sim no)
+				(at 38.1 104.14 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "9cad1846-2d30-447b-ad46-d047cd681c42")
+			)
+			(table_cell "GND"
+				(exclude_from_sim no)
+				(at 44.45 104.14 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "4683f46b-805c-4d60-95d5-4110f106fa70")
+			)
+			(table_cell "3"
+				(exclude_from_sim no)
+				(at 38.1 106.68 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "a86f1d89-7acf-4a04-9049-0b542ac2f268")
+			)
+			(table_cell "EARTH"
+				(exclude_from_sim no)
+				(at 44.45 106.68 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "5726490d-0268-4324-bb3e-c7ff2d7754aa")
+			)
+			(table_cell "4"
+				(exclude_from_sim no)
+				(at 38.1 109.22 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "8151ddf9-d891-41d5-8ba7-ecfe585426f4")
+			)
+			(table_cell "CAN H"
+				(exclude_from_sim no)
+				(at 44.45 109.22 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "823531bf-43d3-4c0a-8624-51a8876dd333")
+			)
+			(table_cell "5"
+				(exclude_from_sim no)
+				(at 38.1 111.76 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "bedeca8c-4718-46fb-ba60-8eb0655f5a8e")
+			)
+			(table_cell "CAN L"
+				(exclude_from_sim no)
+				(at 44.45 111.76 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(uuid "97fc7155-287b-4064-afb1-53e178d44f47")
+			)
+		)
+	)
 	(hierarchical_label "CAN_L"
 		(shape bidirectional)
 		(at 200.66 110.49 0)
