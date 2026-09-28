@@ -4419,7 +4419,7 @@
 				)
 			)
 		)
-		(property "Description" "1206B102K202"
+		(property "Description" "Unpolarized capacitor"
 			(at 71.12 133.35 0)
 			(hide yes)
 			(show_name no)

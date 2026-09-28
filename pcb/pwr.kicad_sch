@@ -3856,7 +3856,7 @@
 				)
 			)
 		)
-		(property "Description" "0603N100J500CT"
+		(property "Description" "Unpolarized capacitor"
 			(at 160.02 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -4967,7 +4967,18 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "CRCW06031M00FKTABC"
+			(at 241.3 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW06031M00FKTABC"
 			(at 241.3 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -6356,8 +6367,19 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "CRCW06031M00FKTABC"
 			(at 177.8 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW06031M00FKTABC"
+			(at 177.8 57.15 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6516,8 +6538,19 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "CRCW06031M00FKTABC"
 			(at 160.02 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW06031M00FKTABC"
+			(at 160.02 64.77 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
