@@ -3492,28 +3492,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 201.93 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 201.93 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 201.93 96.52 0)
 			(hide yes)
@@ -3525,7 +3503,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "RC0603FR-0759RL"
 			(at 201.93 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -3536,7 +3514,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "YAGEO"
 			(at 201.93 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -3547,7 +3525,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
+		(property "LCSC" "C273801"
 			(at 201.93 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -3558,7 +3536,7 @@
 				)
 			)
 		)
-		(property "SnapEDA_Link" ""
+		(property "TME" "RC0603FR-0759RL"
 			(at 201.93 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -3657,28 +3635,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 185.42 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 185.42 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 185.42 132.08 0)
 			(hide yes)
@@ -3690,7 +3646,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "C1608C0G1H472JT000N"
 			(at 185.42 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -3701,7 +3657,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "TDK"
 			(at 185.42 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -3712,18 +3668,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 185.42 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C342963"
 			(at 185.42 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -3822,28 +3767,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 143.51 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 143.51 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 143.51 90.17 0)
 			(hide yes)
@@ -3855,7 +3778,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "TCC0603X7R104K500CT"
 			(at 143.51 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -3866,7 +3789,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "CCTC"
 			(at 143.51 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -3877,18 +3800,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 143.51 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C282519"
 			(at 143.51 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -3987,28 +3899,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 172.72 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 172.72 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 172.72 85.09 0)
 			(hide yes)
@@ -4020,7 +3910,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "TCC0603COG4R7C500CT"
 			(at 172.72 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4031,7 +3921,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "CCTC"
 			(at 172.72 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4042,18 +3932,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 172.72 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C282506"
 			(at 172.72 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4236,28 +4115,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 194.31 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 194.31 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 194.31 96.52 0)
 			(hide yes)
@@ -4269,7 +4126,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "RC0603FR-0759RL"
 			(at 194.31 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4280,7 +4137,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "YAGEO"
 			(at 194.31 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4291,7 +4148,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
+		(property "LCSC" "C273801"
 			(at 194.31 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4302,7 +4159,7 @@
 				)
 			)
 		)
-		(property "SnapEDA_Link" ""
+		(property "TME" "RC0603FR-0759RL"
 			(at 194.31 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4399,28 +4256,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 154.94 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 154.94 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 154.94 120.65 0)
 			(hide yes)
@@ -4432,7 +4267,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "RS-03K5600FT"
 			(at 154.94 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4443,7 +4278,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "FH"
 			(at 154.94 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4454,18 +4289,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 154.94 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C136586"
 			(at 154.94 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4574,8 +4398,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 168.91 137.16 0)
+		(property "MPN" "GAQY212GS"
+			(at 168.91 147.066 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4585,8 +4409,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GAQY212GS"
-			(at 168.91 137.16 0)
+		(property "Manufacturer" "SUPSiC"
+			(at 168.91 147.066 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4596,19 +4420,8 @@
 				)
 			)
 		)
-		(property "TME Electronic Components Part Number" ""
-			(at 168.91 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "TME Electronic Components Price/Stock" ""
-			(at 168.91 137.16 0)
+		(property "LCSC" "C7435107"
+			(at 168.91 147.066 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4724,8 +4537,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Name" "Microchip"
-			(at 137.16 569.85 0)
+		(property "MPN" "ATA6561-GAQW-N"
+			(at 137.16 269.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4736,8 +4549,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ATA6561-GAQW-N"
-			(at 137.16 669.85 0)
+		(property "Manufacturer" "MICROCHIP TECHNOLOGY"
+			(at 137.16 269.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4748,8 +4561,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "579-ATA6561-GAQW-N"
-			(at 137.16 769.85 0)
+		(property "TME" "ATA6561-GAQW-N"
+			(at 137.16 269.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4760,32 +4573,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Microchip-Technology/ATA6561-GAQW-N?qs=y6ZabgHbY%252BwGbm2JCZMHKQ%3D%3D"
-			(at 137.16 869.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "ATA6561-GAQW-N"
-			(at 137.16 969.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ata6561-gaqw-n/microchip-technology.html?utm_currency=USD&region=nac"
-			(at 137.16 1069.85 0)
+		(property "Mouser" "579-ATA6561-GAQW-N"
+			(at 137.16 269.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4900,28 +4689,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 151.13 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 151.13 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 151.13 154.94 0)
 			(hide yes)
@@ -4933,7 +4700,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "RC0603FR-07100KL"
 			(at 151.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4944,7 +4711,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "YAGEO"
 			(at 151.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4955,7 +4722,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
+		(property "LCSC" "C14675"
 			(at 151.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4966,7 +4733,7 @@
 				)
 			)
 		)
-		(property "SnapEDA_Link" ""
+		(property "TME" "RC0603FR-07100K"
 			(at 151.13 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5233,28 +5000,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 113.03 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 113.03 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 113.03 52.07 0)
 			(hide yes)
@@ -5266,7 +5011,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "CS3216X5R106K500NRI"
 			(at 113.03 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5277,7 +5022,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "SAMWHA"
 			(at 113.03 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5288,7 +5033,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
+		(property "LCSC" "C513774"
 			(at 113.03 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5299,7 +5044,7 @@
 				)
 			)
 		)
-		(property "SnapEDA_Link" ""
+		(property "TME" "CS3216X5R106K500NR"
 			(at 113.03 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5401,8 +5146,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BSS138"
-			(at 156.21 148.59 0)
+		(property "MPN" "BSS138"
+			(at 161.29 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5410,6 +5155,43 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Shikues"
+			(at 161.29 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C112239"
+			(at 161.29 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "TME" "BSS138-ONS"
+			(at 161.29 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "1"
@@ -5503,28 +5285,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 184.15 85.09 0)
 			(hide yes)
@@ -5536,7 +5296,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "TCC0603COG4R7C500CT"
 			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5547,7 +5307,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "CCTC"
 			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5558,18 +5318,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 184.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C282506"
 			(at 184.15 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5668,28 +5417,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 154.94 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 154.94 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 154.94 90.17 0)
 			(hide yes)
@@ -5701,7 +5428,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "TCC0603X7R104K500CT"
 			(at 154.94 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -5712,7 +5439,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "CCTC"
 			(at 154.94 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -5723,18 +5450,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 154.94 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C282519"
 			(at 154.94 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -5833,28 +5549,6 @@
 				)
 			)
 		)
-		(property "Availability" ""
-			(at 124.46 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 124.46 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 52.07 0)
 			(hide yes)
@@ -5866,7 +5560,7 @@
 				)
 			)
 		)
-		(property "MF" ""
+		(property "MPN" "TCC0603X7R104K500CT"
 			(at 124.46 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5877,7 +5571,7 @@
 				)
 			)
 		)
-		(property "Price" ""
+		(property "Manufacturer" "CCTC"
 			(at 124.46 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5888,18 +5582,7 @@
 				)
 			)
 		)
-		(property "Purchase-URL" ""
-			(at 124.46 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
+		(property "LCSC" "C282519"
 			(at 124.46 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -6261,8 +5944,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 168.91 123.19 0)
+		(property "MPN" "GAQY212GS"
+			(at 168.91 133.096 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6272,8 +5955,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GAQY212GS"
-			(at 168.91 123.19 0)
+		(property "Manufacturer" "SUPSiC"
+			(at 168.91 133.096 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6283,19 +5966,8 @@
 				)
 			)
 		)
-		(property "TME Electronic Components Part Number" ""
-			(at 168.91 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "TME Electronic Components Price/Stock" ""
-			(at 168.91 123.19 0)
+		(property "LCSC" "C7435107"
+			(at 168.91 133.096 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

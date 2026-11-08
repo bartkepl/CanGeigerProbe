@@ -3759,6 +3759,50 @@
 				)
 			)
 		)
+		(property "MPN" "CC0603JRNPO9BN102"
+			(at 214.63 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 214.63 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106246"
+			(at 214.63 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "CC0603JRNPO9BN102"
+			(at 214.63 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8b8e9fda-6536-447e-880e-a645dc897f46")
 		)
@@ -3839,7 +3883,40 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "PMEG6030EP"
+		(property "MPN" "PMEG6030EP,115"
+			(at 161.29 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 161.29 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "PMEG6030EP.115"
+			(at 161.29 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser" "771-PMEG6030EP-115"
 			(at 161.29 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -3932,8 +4009,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SMBJ33CA"
-			(at 124.46 80.01 90)
+		(property "MPN" "SMBJ33CA"
+			(at 124.46 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "LITTELFUSE"
+			(at 124.46 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "SMBJ33CA-LF"
+			(at 124.46 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4350,6 +4449,50 @@
 				)
 			)
 		)
+		(property "MPN" "CS3216X5R106K500NRI"
+			(at 196.85 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "SAMWHA"
+			(at 196.85 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C513774"
+			(at 196.85 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "CS3216X5R106K500NR"
+			(at 196.85 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "82005622-c10f-4ba4-88f0-1c67040894cb")
 		)
@@ -4430,8 +4573,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "1206B102K202"
-			(at 71.12 133.35 90)
+		(property "MPN" "C1206X102K202T"
+			(at 71.12 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "IHHEC"
+			(at 71.12 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106012"
+			(at 71.12 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4511,6 +4676,39 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 181.61 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RCA120610R0FKEA"
+			(at 181.61 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "VISHAY"
+			(at 181.61 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "RCA120610R0FKEA"
 			(at 181.61 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -4602,8 +4800,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SN010-60"
-			(at 111.76 71.12 90)
+		(property "MPN" "SN010-60"
+			(at 111.76 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "ECE"
+			(at 111.76 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "SN010-60"
+			(at 111.76 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4717,8 +4937,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SMBJ36A-13-F"
-			(at 173.99 80.01 90)
+		(property "MPN" "SMBJ36A-13-F"
+			(at 173.99 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DIODES INCORPORATED"
+			(at 173.99 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "SMBJ36A-13-F"
+			(at 173.99 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4808,8 +5050,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BLM31PG601SN1L"
-			(at 135.89 71.12 90)
+		(property "MPN" "BLM31PG601SN1L"
+			(at 135.89 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "MURATA"
+			(at 135.89 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "BLM31PG601SN1L"
+			(at 135.89 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4923,8 +5187,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SMBJ36A-13-F"
-			(at 149.86 80.01 90)
+		(property "MPN" "SMBJ36A-13-F"
+			(at 149.86 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DIODES INCORPORATED"
+			(at 149.86 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "SMBJ36A-13-F"
+			(at 149.86 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5106,8 +5392,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Name" "TDK"
-			(at 165.1 -389.51 0)
+		(property "MPN" "ACT45B-510-2P-TL003"
+			(at 165.1 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5118,8 +5404,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ACT45B-510-2P-TL003"
-			(at 165.1 -489.51 0)
+		(property "Manufacturer" "TDK"
+			(at 165.1 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5130,8 +5416,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "810-ACT45B5102PTL003"
-			(at 165.1 -589.51 0)
+		(property "LCSC" "C76584"
+			(at 165.1 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5142,8 +5428,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/TDK/ACT45B-510-2P-TL003?qs=U1cgCdF9Le9LCroNYLqljw%3D%3D"
-			(at 165.1 -689.51 0)
+		(property "TME" "ACT45B-510-2P-TL00"
+			(at 165.1 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5154,20 +5440,8 @@
 				(justify left top)
 			)
 		)
-		(property "Arrow Part Number" "ACT45B-510-2P-TL003"
-			(at 165.1 -789.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/act45b-510-2p-tl003/tdk.html?utm_currency=USD&region=nac"
-			(at 165.1 -889.51 0)
+		(property "Mouser" "810-ACT45B5102PTL003"
+			(at 165.1 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5266,8 +5540,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "Leiditech 3R090-5S"
-			(at 102.87 104.14 0)
+		(property "MPN" "3R090-5S"
+			(at 102.87 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 102.87 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C782868"
+			(at 102.87 104.14 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5349,6 +5645,39 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 181.61 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RCA120610R0FKEA"
+			(at 181.61 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "VISHAY"
+			(at 181.61 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "RCA120610R0FKEA"
 			(at 181.61 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5675,8 +6004,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "Leiditech 3R090-5S"
-			(at 102.87 80.01 0)
+		(property "MPN" "3R090-5S"
+			(at 102.87 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 102.87 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C782868"
+			(at 102.87 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5847,8 +6198,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BLM31PG601SN1L"
-			(at 135.89 88.9 90)
+		(property "MPN" "BLM31PG601SN1L"
+			(at 135.89 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "MURATA"
+			(at 135.89 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "BLM31PG601SN1L"
+			(at 135.89 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5940,8 +6313,41 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CDSOT23-T24CAN"
-			(at 130.81 104.14 90)
+		(property "MPN" "CDSOT23-T24CAN"
+			(at 130.81 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns"
+			(at 130.81 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "CDSOT23-T24CAN"
+			(at 130.81 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser" "652-CDSOT23-T24CAN"
+			(at 130.81 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

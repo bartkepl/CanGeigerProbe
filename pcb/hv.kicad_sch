@@ -3230,8 +3230,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BAV199"
-			(at 269.24 99.06 90)
+		(property "MPN" "BAV199"
+			(at 269.24 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DIOTEC SEMICONDUCTOR"
+			(at 269.24 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "BAV199-DIO"
+			(at 269.24 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3329,8 +3351,8 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "DMN3404L"
-			(at 71.12 86.36 0)
+		(property "MPN" "DMN3404L-7"
+			(at 76.2 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3338,6 +3360,43 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer" "Diodes Incorporated"
+			(at 76.2 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "TME" "DMN3404L-7"
+			(at 76.2 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Mouser" "621-DMN3404L-7"
+			(at 76.2 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "3"
@@ -3422,8 +3481,41 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
-			(at 129.54 114.3 90)
+		(property "MPN" "0603N101J500CT"
+			(at 129.54 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Walsin"
+			(at 129.54 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C335544"
+			(at 129.54 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "0603N101J500CT"
+			(at 129.54 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3515,7 +3607,40 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CRCW06031M00FKTABC"
+		(property "MPN" "0603WAF1004T5E"
+			(at 147.32 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 147.32 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 147.32 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "0603WAF1004T5E"
 			(at 147.32 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -3596,6 +3721,39 @@
 			)
 		)
 		(property "Description" ""
+			(at 242.57 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RMS06FT1001"
+			(at 242.57 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "TA-I Tech"
+			(at 242.57 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C209012"
 			(at 242.57 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -3921,6 +4079,50 @@
 				)
 			)
 		)
+		(property "MPN" "MR06X1000FTL"
+			(at 66.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Walsin"
+			(at 66.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C327825"
+			(at 66.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "MR06X1000FTL"
+			(at 66.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9b485002-7cc7-42df-8f43-6cf335a12123")
 		)
@@ -4081,7 +4283,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "HMC1206JT500M"
+		(property "MPN" "HVCB1206JDD500M"
+			(at 147.32 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "SEI Stackpole"
+			(at 147.32 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser" "708-HVCB1206JDD500M"
 			(at 147.32 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -4173,7 +4397,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
+		(property "MPN" "TCC1206COG102J500DT"
+			(at 231.14 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CCTC"
+			(at 231.14 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C282783"
 			(at 231.14 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -4333,6 +4579,50 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 63.5 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0603FR-07100KL"
+			(at 63.5 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 63.5 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14675"
+			(at 63.5 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "RC0603FR-07100K"
 			(at 63.5 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -4520,7 +4810,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -4592,8 +4882,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Name" "LITTELFUSE"
-			(at 199.39 -389.51 0)
+		(property "MPN" "01020071Z"
+			(at 199.39 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4604,8 +4894,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "01020071Z"
-			(at 199.39 -489.51 0)
+		(property "Manufacturer" "Littelfuse"
+			(at 199.39 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4616,8 +4906,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "576-01020071Z"
-			(at 199.39 -589.51 0)
+		(property "Mouser" "576-01020071Z"
+			(at 199.39 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4628,32 +4918,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Littelfuse/01020071Z?qs=hgmQaE9nnAzCBYDQcIezzw%3D%3D"
-			(at 199.39 -689.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "01020071Z"
-			(at 199.39 -789.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/01020071z/littelfuse?utm_currency=USD&region=europe"
-			(at 199.39 -889.51 0)
+		(property "TME" "01020071Z"
+			(at 199.39 -89.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4902,6 +5168,39 @@
 				)
 			)
 		)
+		(property "MPN" "1206N4R7C102CT"
+			(at 220.98 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Walsin"
+			(at 220.98 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2840257"
+			(at 220.98 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "af63008e-4e16-489b-9bd0-d4e81dec03ec")
 		)
@@ -5063,7 +5362,40 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CRCW06031M00FKTABC"
+		(property "MPN" "0603WAF1004T5E"
+			(at 231.14 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 231.14 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 231.14 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "0603WAF1004T5E"
 			(at 231.14 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -5145,6 +5477,39 @@
 			)
 		)
 		(property "Description" ""
+			(at 210.82 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCC1206COG3R0C102DT"
+			(at 210.82 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CCTC"
+			(at 210.82 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5449033"
 			(at 210.82 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5314,7 +5679,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SMD1206-5M1-1%"
+		(property "MPN" "HVC1206T5004JET"
+			(at 203.2 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Ohmite"
+			(at 203.2 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser" "588-HVC1206T5004JET"
 			(at 203.2 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5511,8 +5898,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BAV21WS"
-			(at 62.23 71.12 90)
+		(property "MPN" "BAV21WS"
+			(at 62.23 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DIOTEC SEMICONDUCTOR"
+			(at 62.23 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "BAV21WS-DIO"
+			(at 62.23 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5594,6 +6003,50 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 39.37 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CS3216X5R106K500NRI"
+			(at 39.37 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "SAMWHA"
+			(at 39.37 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C513774"
+			(at 39.37 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "CS3216X5R106K500NR"
 			(at 39.37 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -5686,6 +6139,39 @@
 				)
 			)
 		)
+		(property "MPN" "TCC0603X7R104K500CT"
+			(at 31.75 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CCTC"
+			(at 31.75 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C282519"
+			(at 31.75 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8c599a6e-99b3-4491-b580-1e3a14f46a52")
 		)
@@ -5768,7 +6254,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CC1206KKX7RC222"
+		(property "MPN" "TCC1206X7R222K102DTS"
+			(at 123.19 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CCTC"
+			(at 123.19 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C344193"
 			(at 123.19 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -5940,7 +6448,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GRM43DR7LW104KW01L"
+		(property "MPN" "NV1812B104K102CEMN"
+			(at 130.81 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HUI JU"
+			(at 130.81 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C780707"
 			(at 130.81 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -6033,7 +6563,29 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "HMC1206JT500M"
+		(property "MPN" "HVCB1206JDD500M"
+			(at 147.32 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "SEI Stackpole"
+			(at 147.32 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser" "708-HVCB1206JDD500M"
 			(at 147.32 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -6116,6 +6668,50 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 58.42 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0603JRNPO9BN102"
+			(at 58.42 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 58.42 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C106246"
+			(at 58.42 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "CC0603JRNPO9BN102"
 			(at 58.42 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6306,7 +6902,40 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "STTH112A"
+		(property "MPN" "STTH112A"
+			(at 113.03 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "ST"
+			(at 113.03 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C131297"
+			(at 113.03 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "STTH112A"
 			(at 113.03 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -6398,8 +7027,30 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "BAV199"
-			(at 110.49 107.95 90)
+		(property "MPN" "BAV199"
+			(at 110.49 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "DIOTEC SEMICONDUCTOR"
+			(at 110.49 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "BAV199-DIO"
+			(at 110.49 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6482,6 +7133,50 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 57.15 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0603WAF220JT5E"
+			(at 57.15 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 57.15 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C23345"
+			(at 57.15 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "TME" "0603WAF220JT5E"
 			(at 57.15 86.36 0)
 			(hide yes)
 			(show_name no)
