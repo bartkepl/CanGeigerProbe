@@ -247,6 +247,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 1,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.6,
           "td_maxheight": 2.0,
@@ -258,6 +259,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 1,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -269,6 +271,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -586,6 +589,7 @@
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
+      "same_local_global_power": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
@@ -646,8 +650,8 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
-    "netclass_assignments": null,
+    "net_colors": {},
+    "netclass_assignments": {},
     "netclass_patterns": [
       {
         "netclass": "Default",
@@ -977,7 +981,7 @@
         "uuid": "eb6e66b6-2df0-4872-8f92-4c510b34f8fe"
       }
     ],
-    "used_designators": "J1-6,#FLG1-6,R1-30,R46,IC1-2,IC4,IC8,L1,#PWR1-40,#PWR67,#PWR69,#PWR88-94,C1-50,U1-3,U701-702,Q1-2,D1-10,D27,L1.4-5,GD1-2,F1-3,FB1-4,FB13,FL1,BT1-2,Y1,TP9-10,ANODE1-2,CATHODE1,FID1-2",
+    "used_designators": "#FLG1-6,#PWR1-40,#PWR67,#PWR69,#PWR88-94,ANODE1-2,BT1-2,C1-50,CATHODE1,D1-10,D27,F1-3,FB1-4,FB13,FID1-2,FL1,GD1-2,H1-2,IC1-2,IC4,IC8,J1-6,L1,L1.4-5,Q1-2,R1-30,R46,TP9-10,U1-3,U701-702,Y1",
     "variants": []
   },
   "sheets": [

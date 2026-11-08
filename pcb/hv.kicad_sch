@@ -4208,7 +4208,7 @@
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "42822ea6-b024-490d-b173-1bad789b0573")
 		(property "Reference" "L1.3"
 			(at 91.44 76.2 0)
@@ -5179,7 +5179,7 @@
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "7a29a19b-b6a8-46c8-966b-f537291c5d87")
 		(property "Reference" "L1.2"
 			(at 91.44 73.66 0)
@@ -5349,7 +5349,7 @@
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "8a46e1b9-c9b4-4e54-bb07-cfd5fb0f7cba")
 		(property "Reference" "L1.1"
 			(at 82.042 76.2 0)
