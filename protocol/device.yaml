@@ -202,9 +202,10 @@ device_params:
              obowiazuje limit wkompilowany." }
 
   # --- detekcja ---
-  - { id: 0x18, name: COMP_THRESHOLD, type: u16, access: rw, storage: nv, min: 20, max: 3000, default: 1000, unit: "mV",
-      desc: "Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA).
-             Wartosc domyslna do ustalenia w etapie E3." }
+  - { id: 0x18, name: COMP_THRESHOLD, type: u16, access: rw, storage: nv, min: 20, max: 3000, default: 2400, unit: "mV",
+      desc: "Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA). Sygnal
+             spoczynkowy 3.3 V (R13), impuls obniza go do ok. 1.4 V (dzielnik
+             pojemnosciowy C18/C19). Wartosc robocza ustalana w E3/E5." }
 
   # --- pomiar ---
   - { id: 0x1C, name: AVG_MODE, type: u8, access: rw, storage: nv, min: 0, max: 1, default: 1, unit: "-",

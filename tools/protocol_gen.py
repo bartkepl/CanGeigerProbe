@@ -506,7 +506,7 @@ PARAMS: list[ParamDesc] = [
     ParamDesc(0x12, 'HV_SETPOINT', 'u16', 'rw', 'nv', 300, 500, 400, 'V', False, 'Nastawa napiecia anodowego.'),
     ParamDesc(0x13, 'HV_MIN', 'u16', 'rw', 'nv', 250, 500, 360, 'V', False, 'Dolna granica pracy; ponizej po lagodnym starcie — HV_FAULT UNDERVOLTAGE.'),
     ParamDesc(0x14, 'HV_MAX', 'u16', 'rw', 'nv', 300, 550, 450, 'V', False, 'Gorna granica pracy; powyzej — HV_FAULT OVERVOLTAGE. Niezaleznie obowiazuje limit wkompilowany.'),
-    ParamDesc(0x18, 'COMP_THRESHOLD', 'u16', 'rw', 'nv', 20, 3000, 1000, 'mV', False, 'Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA). Wartosc domyslna do ustalenia w etapie E3.'),
+    ParamDesc(0x18, 'COMP_THRESHOLD', 'u16', 'rw', 'nv', 20, 3000, 2400, 'mV', False, 'Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA). Sygnal spoczynkowy 3.3 V (R13), impuls obniza go do ok. 1.4 V (dzielnik pojemnosciowy C18/C19). Wartosc robocza ustalana w E3/E5.'),
     ParamDesc(0x1C, 'AVG_MODE', 'u8', 'rw', 'nv', 0, 1, 1, '-', False, 'Usrednianie CPM i mocy dawki: 0 = stale okno AVG_WINDOW_S, 1 = adaptacyjne (okno skracane przy szybkiej zmianie czestosci).'),
     ParamDesc(0x1D, 'AVG_WINDOW_S', 'u16', 'rw', 'nv', 10, 3600, 60, 's', False, 'Dlugosc okna usredniania (w trybie adaptacyjnym — okno maksymalne).'),
     ParamDesc(0x20, 'ALARM_RATE_WARN', 'u32', 'rw', 'nv', 0, 100000000, 50, '0.01 uSv/h', False, 'Prog ostrzegawczy mocy dawki; 50 = 0.5 uSv/h. 0 = wylaczony.'),

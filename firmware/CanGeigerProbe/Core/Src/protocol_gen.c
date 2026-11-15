@@ -24,7 +24,7 @@ const mpc_param_desc_t mpc_param_table[MPC_PARAM_COUNT] = {
   { MPC_PARAM_HV_SETPOINT, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 300, 500, 400 },  /* Nastawa napiecia anodowego. */
   { MPC_PARAM_HV_MIN, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 250, 500, 360 },  /* Dolna granica pracy; ponizej po lagodnym starcie — HV_FAULT UNDERVOLTAGE. */
   { MPC_PARAM_HV_MAX, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 300, 550, 450 },  /* Gorna granica pracy; powyzej — HV_FAULT OVERVOLTAGE. Niezaleznie obowiazuje limit wkompilowany. */
-  { MPC_PARAM_COMP_THRESHOLD, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 20, 3000, 1000 },  /* Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA). Wartosc domyslna do ustalenia w etapie E3. */
+  { MPC_PARAM_COMP_THRESHOLD, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 20, 3000, 2400 },  /* Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA). Sygnal spoczynkowy 3.3 V (R13), impuls obniza go do ok. 1.4 V (dzielnik pojemnosciowy C18/C19). Wartosc robocza ustalana w E3/E5. */
   { MPC_PARAM_AVG_MODE, MPC_PTYPE_U8, MPC_ACC_RW, MPC_STORE_NV, 0, 0, 1, 1 },  /* Usrednianie CPM i mocy dawki: 0 = stale okno AVG_WINDOW_S, 1 = adaptacyjne (okno skracane przy szybkiej zmianie czestosci). */
   { MPC_PARAM_AVG_WINDOW_S, MPC_PTYPE_U16, MPC_ACC_RW, MPC_STORE_NV, 0, 10, 3600, 60 },  /* Dlugosc okna usredniania (w trybie adaptacyjnym — okno maksymalne). */
   { MPC_PARAM_ALARM_RATE_WARN, MPC_PTYPE_U32, MPC_ACC_RW, MPC_STORE_NV, 0, 0, 100000000, 50 },  /* Prog ostrzegawczy mocy dawki; 50 = 0.5 uSv/h. 0 = wylaczony. */

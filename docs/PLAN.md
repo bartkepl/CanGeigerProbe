@@ -218,6 +218,9 @@ Mechanizmy zapisuje [ADR 0003](adr/0003-bezpieczenstwo-generatora-hv.md); warto�
 | **E6** Hosty | moduł urządzenia w CanSensorHub, narzędzie charakterystyki plateau, dedykowany widok w CanSensorLoggerPi | — | — |
 | **E7** Odbiór | praca ciągła 24 h, liczniki po dobie, wersja 1.0, wpis egzemplarza w `node_addresses.yaml` | — | — |
 
+Procedurę E1 opisuje [E1_URUCHOMIENIE.md](E1_URUCHOMIENIE.md), zakres prac E2–E7 —
+[ETAPY.md](ETAPY.md).
+
 Etap E3 nie zależy od transformatora: tor zliczania badany jest sygnałem
 z generatora. Kalibracja dozymetryczna (współczynnik µSv/h względem źródła
 lub przyrządu wzorcowego) pozostaje poza zakresem planu do czasu ustalenia
@@ -258,6 +261,7 @@ opisane są w kolumnie uwag.
 | COMP1 | INP = PA1; INM = DAC1 kanał 1 | kanał 2 ma wyjście na PA5 (pomiar HV) |
 | COMP1 | Ultra Low Power, histereza Medium, bez okna, bez EXTI | |
 | COMP1 | Blanking: TIM2_OC3 | |
+| COMP1 | Output Polarity: **Inverted** (zmiana przed E3) | impuls obniża sygnał poniżej progu; przy polaryzacji odwrotnej spoczynek = stan niski, a blanking (wymusza stan niski) nie tworzy zboczy liczonych przez LPTIM1 |
 | COMP1 | bez wyjścia na pin | COMP1_OUT jest alternatywą PB0 (`EN_I_SENS`) |
 | DAC1 | wyłącznie kanał 1, „connected to on-chip peripherals”, bufor wyłączony | kanał 2 usunięty |
 | LPTIM1 | w CubeMX: „Counts internal clock events”, Prescaler Div1, Trigger Software | CubeMX w tym trybie nie udostępnia wyboru wejścia, a tryb „external” zajmuje pin LPTIM1_IN1 (PB5). Counter source External, Input1 = COMP1, filtr 8 taktów i ARR 0xFFFF ustawia kod w `USER CODE LPTIM1_Init 2` |
@@ -295,6 +299,11 @@ symbolu `HAL_UART_MODULE_ENABLED` (ADR 0001 sondy zastąpiony przez
 CanBusCommon ADR 0006).
 
 ## 9. Zagadnienia otwarte
+
+- **Polaryzacja wyjścia COMP1** — w `.ioc` obecnie Non-inverted: spoczynek
+  wysoki, a blanking wymusza stan niski, co w czasie każdej serii flybacka
+  daje parę zboczy liczoną jako impuls. Do zmiany w CubeMX na Inverted przed
+  E3 (sprawdzenie w E1 krok 9).
 
 - **Poziom 2 wspólnej osi czasu** — do rozważenia po jego zatwierdzeniu
   pomiarem w standardzie; dla sondy bez potrzeby funkcjonalnej.
