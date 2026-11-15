@@ -9,7 +9,7 @@ Polowa sonda promieniowania jonizującego z miniaturową lampą Geigera-Müllera
 ![bus](https://img.shields.io/badge/bus-CAN%202.0B-informational)
 ![pcb](https://img.shields.io/badge/PCB-4%20warstwy%2C%2086×30%20mm-lightgrey)
 
-> **Status:** schemat (6 arkuszy hierarchicznych) i layout PCB zakończone, pliki produkcyjne wygenerowane — przed zamówieniem prototypu. Firmware na etapie szkieletu bring-up.
+> **Status:** schemat (6 arkuszy hierarchicznych) i layout PCB zakończone, pliki produkcyjne wygenerowane, prototyp zamówiony. Firmware: etap E0 (specyfikacja) zakończony.
 
 Inspiracja: sondy Polon-Alfa (DPO-G, ZR-1) — jedna sonda, cyfrowe wyjście do jednostki nadrzędnej, wymienność lamp.
 
@@ -32,7 +32,7 @@ Cała elektronika mieści się na jednej stronie; spód pozostaje niemal pusty �
 ## Najważniejsze cechy
 
 - **Programowalne HV 350–550 V** — jedna sonda obsługuje wiele typów lamp, setpoint ustawiany przez CAN bez zmian sprzętowych.
-- **Micropower** — pobór idle rzędu setek µA dzięki buckowi LT8606 (Iq 2.5 µA), MCU w Stop 2 i podwójnemu wybudzaniu (RTC + aktywność magistrali).
+- **Niski pobór** — buck LT8606 (Iq 2.5 µA), MCU w trybie Run/Sleep (WFI) przy MSI 4 MHz, sprzętowe zliczanie impulsów i filtry CAN ograniczające wybudzenia. Stop 2 nie jest stosowany: sonda pracuje na wspólnej magistrali i nasłuchuje stale ([ADR 0002](docs/adr/0002-strategia-poboru-pradu.md)).
 - **Flyback sterowany deterministycznie z MCU** — brak dedykowanego kontrolera PWM; TIM2 generuje burst, ADC mierzy HV, firmware zamyka pętlę bang-bang.
 - **CAN 2.0B (29-bit ID)** z wybudzaniem na aktywność magistrali, 125 kbit/s – 1 Mbit/s.
 - **Przełączalna terminacja CAN** — split 2×59 Ω + 4.7 nF załączany dwoma PhotoMOS-ami z GPIO (sonda na końcu linii vs. w środku, bez zwór).
@@ -91,7 +91,7 @@ M12 Vin (7-32V) ─▶ Ochrona (GDT+TVS+ferryt) ─▶ shunt 0.5Ω ─▶ LT8606
                                                                                                                     │
    Lampa G-M ◀─ R12 (quench) ◀─ dzielnik HV 1GΩ:1MΩ ◀─────────────────────────────────────────────────────────────┘
         │
-        └─▶ dzielnik pojemnościowy ─▶ COMP1 (próg z DAC1) ─▶ LPTIM (zliczanie w Stop 2)
+        └─▶ dzielnik pojemnościowy ─▶ COMP1 (próg z DAC1) ─▶ LPTIM1 (zliczanie sprzętowe)
 ```
 
 Kluczowa cecha: **wspólna masa** (star ground), izolacja zapewniona wyłącznie przez TVS/GDT; `Earth` (obudowa) oddzielona od `GND` sygnałowej i łączona tylko przez Y-cap 1 nF/2 kV. Flyback „śpi" i budzi się kilka razy na sekundę — stąd pobór na poziomie µA.
@@ -148,7 +148,20 @@ Zasilany z **+5 V** (nie z Vin), snubber RCD clamp do +5 V — recykling energii
 
 ## Firmware
 
-Projekt STM32CubeIDE w [firmware/CanGeigerProbe/](firmware/CanGeigerProbe/) — na razie szkielet wygenerowany z CubeMX ([CanGeigerProbe.ioc](firmware/CanGeigerProbe/CanGeigerProbe.ioc)) z inicjalizacją ADC1, CAN1, COMP1, DAC1, I2C1 i TIM2. Logika aplikacji (pętla HV, zliczanie w Stop 2, protokół CAN) do napisania.
+Węzeł profilu 2 standardu [CanBusCommon](https://github.com/bartkepl/CanBusCommon) (rewizja 2.1, podmoduł `common/`). Plan realizacji, etapy E0–E7 i konfiguracja CubeMX: [docs/PLAN.md](docs/PLAN.md); decyzje: [docs/adr/](docs/adr/README.md).
+
+| Element | Położenie |
+|---|---|
+| Opis protokołu węzła | [protocol/device.yaml](protocol/device.yaml) — kod generowany do `protocol_gen.h/.c` i `tools/protocol_gen.py` |
+| Aplikacja | [firmware/CanGeigerProbe/](firmware/CanGeigerProbe/) — od `0x08004000` |
+| Bootloader | [firmware/CanGeigerProbe_BL/](firmware/CanGeigerProbe_BL/) — wspólne źródła `common/bootloader` (wyłącznie CAN), adres `0x30` |
+
+```
+python common/protocol/generate.py protocol/device.yaml          # generacja
+python common/tools/validate_ecosystem.py protocol/device.yaml   # walidacja
+```
+
+Stan: etap E0 zakończony — specyfikacja protokołu, projekty CubeIDE aplikacji i bootloadera. Kolejny etap: E1 (uruchomienie sprzętu).
 
 ---
 
@@ -158,7 +171,7 @@ Projekt STM32CubeIDE w [firmware/CanGeigerProbe/](firmware/CanGeigerProbe/) — 
 - [ ] **Faza 2** — prototyp transformatora (nawinięcie, strojenie, testy)
 - [x] **Faza 3** — schemat i layout PCB w KiCad (strefy HV / analog / cyfrowe), pliki produkcyjne wygenerowane
 - [ ] **Faza 3b** — zamówienie PCB, montaż sekcyjny, bring-up sprzętowy
-- [ ] **Faza 4** — firmware (LPTIM+COMP w Stop 2, pętla HV, bxCAN + wake-up, RTC/kalibracja MSI, current-sense, protokół)
+- [ ] **Faza 4** — firmware wg [docs/PLAN.md](docs/PLAN.md): E0 specyfikacja ✔, E1 uruchomienie sprzętu, E2 warstwa wspólna, E3 tor zliczania, E4 generator HV, E5 dozymetria
 - [ ] **Faza 5** — kalibracja HV per lampa, kalibracja CPS→µSv/h (Cs-137), testy EMC
 - [ ] **Faza 6** — mechanika: obudowa Al, montaż M12, testy IP67
 
@@ -172,7 +185,11 @@ Projekt STM32CubeIDE w [firmware/CanGeigerProbe/](firmware/CanGeigerProbe/) — 
 ├── pcb/            # projekt KiCad 10 (schemat hierarchiczny, PCB, biblioteki lokalne, modele 3D)
 ├── prod/           # pliki produkcyjne: gerbery (.zip), PDF schematu i PCB, interaktywny BOM
 ├── sim/            # symulacje LTspice (flyback HV, LT8606)
-└── firmware/       # projekt STM32CubeIDE (STM32L432, szkielet bring-up)
+├── common/         # podmoduł CanBusCommon (standard magistrali, wspólny bootloader, narzędzia)
+├── protocol/       # device.yaml — warstwa protokołu specyficzna dla sondy
+├── tools/          # protocol_gen.py — kod protokołu dla hostów (generowany)
+├── docs/           # plan realizacji oprogramowania, ADR
+└── firmware/       # projekty STM32CubeIDE: aplikacja i bootloader (STM32L432)
 ```
 
 Pliki produkcyjne generowane są jobsetami KiCad: [gen_prod.kicad_jobset](pcb/gen_prod.kicad_jobset) (PDF + BOM), [gen_gerber.kicad_jobset](pcb/gen_gerber.kicad_jobset) (gerbery + wiertła), [gen_media.kicad_jobset](pcb/gen_media.kicad_jobset) (rendery 3D).

@@ -1,0 +1,243 @@
+# =============================================================================
+#  CanGeigerProbe — warstwa DEVICE SPECIFIC protokolu
+# =============================================================================
+#  Warstwa wspolna (uniwersalna + powszechnej praktyki, rejestry) pochodzi z
+#  podmodulu common/ — repozytorium CanBusCommon (rewizja 2.1). Ten plik
+#  doklada WYLACZNIE to, co specyficzne dla sondy radiometrycznej.
+#
+#  Generacja:  python common/protocol/generate.py protocol/device.yaml
+#  Walidacja:  python common/tools/validate_ecosystem.py protocol/device.yaml
+#
+#  NIE definiuj tutaj niczego, co jest w warstwie wspolnej. Walidator odrzuci
+#  kazda kolizje numeracji.
+# =============================================================================
+
+extends: ../common/protocol/common.yaml
+
+device:
+  name: CanGeigerProbe
+  device_type: 0x0004
+  display_name: "Sonda radiometryczna Geigera-Mullera"
+  mcu: STM32L432KCU6
+  node_default: 0x30
+  # Adres wkompilowany w obraz bootloadera — niezalezny od NODE_ID aplikacji.
+  bootloader_node: 0x30
+  enter_bootloader_opcode: 0x0D
+
+  # Zdolnosci zglaszane w CAPABILITIES. Zbior musi odpowiadac implementacji
+  # (ADR 0001 CanBusCommon) — deklaracja ponad stan jest gorsza od pominiecia.
+  #  TIME_SYNC: odbiorca wspolnej osi czasu poziomu 1 (ADR 0007 CanBusCommon).
+  #  TIME_SOURCE nie jest deklarowane: MCP79410 bez dyscypliny zewnetrznej nie
+  #  jest wzorcem czasu. TIME_SYNC_PRECISE nie jest deklarowane: poziom 2 jest
+  #  provisional, a sonda agreguje zliczenia w oknach sekundowych.
+  #  RANGE_LIMITS nie jest deklarowane: alarmy radiometryczne sa zdarzeniami
+  #  wlasnymi (DOSE_ALARM, HV_FAULT).
+  capabilities:
+    - TELEMETRY
+    - SENSORS
+    - PARAMS_NV
+    - RTC
+    - BOOTLOADER
+    - TIME_SYNC
+    - LIST_PARAMS
+    - LIST_CHANNELS
+    - COUNTERS
+    - SELF_TEST
+    - CAL_LOCK
+    - ADDR_CONFLICT_DETECT
+    - STATUS_EXT
+    - RADIOMETRY
+
+  # Parametry warstwy uniwersalnej dotyczace tego wezla. NODE_ID
+  # i TELEMETRY_PERIOD sa obowiazkowe i dokladane automatycznie.
+  universal_params_implemented:
+    - MEASURE_PERIOD
+    - CAN_TERMINATION
+    - LOW_POWER
+    - CAL_LOCK
+    - HEARTBEAT_PERIOD
+
+# Zawezenia parametrow uniwersalnych — wylacznie zawezenie, nigdy poszerzenie.
+universal_param_overrides:
+  NODE_ID:
+    default: 48      # 0x30 — zakres CanGeigerProbe to 0x30..0x3F
+    min: 48
+    max: 63
+
+# Sciezki wyjsciowe generatora (wzgledem korzenia tego repozytorium).
+outputs:
+  h:  firmware/CanGeigerProbe/Core/Inc/protocol_gen.h
+  c:  firmware/CanGeigerProbe/Core/Src/protocol_gen.c
+  py: tools/protocol_gen.py
+
+# Wersjonowanie — patrz CONFORMANCE.md w repozytorium wspolnym.
+#   fw_version_minor += 1   zmiana zgodna
+#   fw_version_major += 1   zmiana przelamujaca (minor = 0)
+#   build_revision   += 1   ZAWSZE, przy kazdej zmianie
+#   hw_version_*            TYLKO recznie, przy fizycznej zmianie plytki
+info:
+  fw_version_major: 0
+  fw_version_minor: 1
+  hw_version_major: 1
+  hw_version_minor: 0
+  build_revision: 1
+
+# -----------------------------------------------------------------------------
+# Czujniki — nazwy z registry/sensor_types.yaml.
+# -----------------------------------------------------------------------------
+sensors:
+  - GM_TUBE       # 0x30 — tuba G-M (STS-5, alternatywnie DOI-80), COMP1 -> LPTIM1
+  - HV_MONITOR    # 0x31 — dzielnik HV 1:1001 na ADC1 IN10 (PA5)
+  - SUPPLY_MON    # 0x11 — VIN_SENSE (PA6) + INA186 (PA7)
+  - MCU           # 0x0C — wewnetrzny ADC (temperatura zlacza, VDDA)
+
+# -----------------------------------------------------------------------------
+# Kanaly telemetrii — nazwy wielkosci z registry/quantities.yaml.
+# Do uruchomienia generatora HV (etap E4) TUBE_HV, CPM, DOSE_RATE i DOSE_ACC
+# nadawane sa z flaga VALID = 0.
+# -----------------------------------------------------------------------------
+telemetry_channels:
+  - CPM             # 0x41  surowe zliczenia na minute
+  - DOSE_RATE       # 0x40  ze wspolczynnikiem CAL_CPM_TO_USVH
+  - DOSE_ACC        # 0x42  od ostatniego RESET_DOSE
+  - TUBE_HV         # 0x43
+  - SUPPLY_VOLTAGE  # 0x12
+  - SUPPLY_CURRENT  # 0x13
+  - MCU_TEMP        # 0x0A
+  - VDDA            # 0x0B
+
+# -----------------------------------------------------------------------------
+# Komendy DEVICE SPECIFIC (zakres 0x80..0xFF)
+# -----------------------------------------------------------------------------
+device_opcodes:
+  - { name: RESET_DOSE,      value: 0x80, arg: none, response: RESPONSE,
+      guard: 0xD0,
+      desc: "Zerowanie dawki skumulowanej (DOSE_ACC) w SRAM MCP79410 i we
+             flashu. WYMAGA dane[0]=0xD0. RESPONSE: dawka przed zerowaniem,
+             u32 0.01 uSv (4 B)." }
+  - { name: READ_RAW_COUNTS, value: 0x81, arg: none, response: RESPONSE,
+      desc: "Surowy stan licznika dla metrologii po stronie hosta, 8 B LE:
+             [0] COUNTS u32 — zliczenia od startu (licznik 32-bitowy LPTIM1,
+             zawijany); [4] ELAPSED_MS u32 — czas od startu z podstawy
+             zdyscyplinowanej LSE. Host liczy czestosc z roznicy dwoch
+             odczytow, niezaleznie od usredniania w wezle." }
+  - { name: GET_HV_STATUS,   value: 0x82, arg: none, response: RESPONSE,
+      desc: "Stan generatora HV, 8 B LE: [0] STATE u8 (0 OFF, 1 SOFT_START,
+             2 REGULATING, 3 FAULT); [1] LAST_FAULT u8 (kody jak w zdarzeniu
+             HV_FAULT, 0 = brak); [2] HV_MEAS u16 0.1 V; [4] PULSES_PER_S u16
+             — impulsy klucza w ostatniej sekundzie; [6] DUTY u16 0.01 % —
+             udzial czasu przewodzenia klucza." }
+
+# -----------------------------------------------------------------------------
+# Zdarzenia DEVICE SPECIFIC (zakres 0x80..0xFF)
+# -----------------------------------------------------------------------------
+device_events:
+  - { name: DOSE_ALARM, value: 0x80,
+      desc: "Przekroczenie progu alarmowego mocy dawki albo dawki i powrot
+             ponizej progu z histereza (zbocze).
+             Uklad ladunku: device_event_payloads.DOSE_ALARM." }
+  - { name: HV_FAULT,   value: 0x81,
+      desc: "Wylaczenie generatora HV przez zabezpieczenie. Generator pozostaje
+             wylaczony do ponownego zapisu HV_ENABLE = 1.
+             Uklad ladunku: device_event_payloads.HV_FAULT." }
+
+device_event_payloads:
+  DOSE_ALARM:
+    - { name: LEVEL, offset: 0, ctype: u8, desc: "Prog, ktorego dotyczy zbocze",
+        values: [ { name: RATE_WARN, value: 1, desc: "ALARM_RATE_WARN" },
+                  { name: RATE_HIGH, value: 2, desc: "ALARM_RATE_HIGH" },
+                  { name: DOSE,      value: 3, desc: "ALARM_DOSE" } ] }
+    - { name: STATE, offset: 1, ctype: u8, desc: "Kierunek zbocza",
+        values: [ { name: CLEARED,  value: 0, desc: "Powrot ponizej progu (z histereza)" },
+                  { name: EXCEEDED, value: 1, desc: "Przekroczenie progu" } ] }
+    - { name: VALUE, offset: 2, ctype: u32,
+        desc: "Wartosc w chwili zbocza: moc dawki 0.01 uSv/h (RATE_*) albo
+               dawka 0.01 uSv (DOSE)" }
+  HV_FAULT:
+    - { name: CAUSE, offset: 0, ctype: u8, desc: "Przyczyna wylaczenia",
+        values: [ { name: OVERVOLTAGE,  value: 1, desc: "HV powyzej HV_MAX albo limitu wkompilowanego" },
+                  { name: UNDERVOLTAGE, value: 2, desc: "HV ponizej HV_MIN po zakonczeniu lagodnego startu" },
+                  { name: NO_RISE,      value: 3, desc: "Seria impulsow bez oczekiwanego przyrostu HV (przerwany dzielnik, zwarcie)" },
+                  { name: PULSE_BUDGET, value: 4, desc: "Przekroczony budzet impulsow na sekunde" } ] }
+    - { name: HV_MEAS, offset: 1, ctype: u16, desc: "Odczyt HV w chwili wylaczenia, 0.1 V" }
+
+# -----------------------------------------------------------------------------
+# Bity pol odeslanych przez warstwe wspolna
+# -----------------------------------------------------------------------------
+universal_event_field_bits:
+  BOOT.POST_MASK:
+    - { name: RAM,   bit: 0, desc: "Test marszowy RAM (SRAM2 w calosci + bufor w SRAM1)" }
+    - { name: FLASH, bit: 1, desc: "Suma CRC obszaru programu" }
+    - { name: CPU,   bit: 2, desc: "Sciezka ALU i rejestry" }
+    - { name: CLOCK, bit: 3, desc: "Taktowanie rdzenia poza oczekiwanym zakresem" }
+  SENSOR_IRQ.LINES:
+    - { name: GM_PULSE, bit: 0,
+        desc: "Wyjscie komparatora impulsow tuby (COMP1). Impulsy zliczane sa
+               sprzetowo (LPTIM1) i nie sa zglaszane zdarzeniem SENSOR_IRQ;
+               bit opisuje linie na wypadek zgloszenia surowego przerwania." }
+
+# -----------------------------------------------------------------------------
+# Parametry DEVICE SPECIFIC (zakres 0x10..0xFF)
+#   access: ro | rw ; storage: nv | ram
+#   calibration: true  => zapis blokowany przez uniwersalny CAL_LOCK
+#  Granice HV i czasu przewodzenia klucza flybacka sa dodatkowo ograniczone
+#  wartosciami wkompilowanymi w obraz (bezpieczenstwo HV — PLAN.md §6).
+#  Parametry czasowe klucza flybacka zostana dopisane w etapie E4, po
+#  pomiarach transformatora.
+# -----------------------------------------------------------------------------
+device_params:
+  # --- tuba i HV ---
+  - { id: 0x10, name: TUBE_TYPE, type: u8, access: rw, storage: nv, min: 0, max: 1, default: 0, unit: "-",
+      desc: "Typ tuby: 0 = STS-5 (R12 4.7 MOhm), 1 = DOI-80 (R12 5.1 MOhm).
+             Wybiera domyslne wartosci HV i czasu martwego przy LOAD_DEFAULTS." }
+  - { id: 0x11, name: HV_ENABLE, type: u8, access: rw, storage: nv, min: 0, max: 1, default: 0, unit: "0/1",
+      desc: "Wlaczenie generatora HV. Domyslnie wylaczony; po HV_FAULT wymaga
+             ponownego zapisu 1." }
+  - { id: 0x12, name: HV_SETPOINT, type: u16, access: rw, storage: nv, min: 300, max: 500, default: 400, unit: "V",
+      desc: "Nastawa napiecia anodowego." }
+  - { id: 0x13, name: HV_MIN, type: u16, access: rw, storage: nv, min: 250, max: 500, default: 360, unit: "V",
+      desc: "Dolna granica pracy; ponizej po lagodnym starcie — HV_FAULT UNDERVOLTAGE." }
+  - { id: 0x14, name: HV_MAX, type: u16, access: rw, storage: nv, min: 300, max: 550, default: 450, unit: "V",
+      desc: "Gorna granica pracy; powyzej — HV_FAULT OVERVOLTAGE. Niezaleznie
+             obowiazuje limit wkompilowany." }
+
+  # --- detekcja ---
+  - { id: 0x18, name: COMP_THRESHOLD, type: u16, access: rw, storage: nv, min: 20, max: 3000, default: 1000, unit: "mV",
+      desc: "Prog komparatora impulsow (DAC1 kanal 1, wzgledem VDDA).
+             Wartosc domyslna do ustalenia w etapie E3." }
+
+  # --- pomiar ---
+  - { id: 0x1C, name: AVG_MODE, type: u8, access: rw, storage: nv, min: 0, max: 1, default: 1, unit: "-",
+      desc: "Usrednianie CPM i mocy dawki: 0 = stale okno AVG_WINDOW_S,
+             1 = adaptacyjne (okno skracane przy szybkiej zmianie czestosci)." }
+  - { id: 0x1D, name: AVG_WINDOW_S, type: u16, access: rw, storage: nv, min: 10, max: 3600, default: 60, unit: "s",
+      desc: "Dlugosc okna usredniania (w trybie adaptacyjnym — okno maksymalne)." }
+
+  # --- alarmy ---
+  - { id: 0x20, name: ALARM_RATE_WARN, type: u32, access: rw, storage: nv, min: 0, max: 100000000, default: 50, unit: "0.01 uSv/h",
+      desc: "Prog ostrzegawczy mocy dawki; 50 = 0.5 uSv/h. 0 = wylaczony." }
+  - { id: 0x21, name: ALARM_RATE_HIGH, type: u32, access: rw, storage: nv, min: 0, max: 100000000, default: 1000, unit: "0.01 uSv/h",
+      desc: "Prog alarmowy mocy dawki; 1000 = 10 uSv/h. 0 = wylaczony." }
+  - { id: 0x22, name: ALARM_DOSE, type: u32, access: rw, storage: nv, min: 0, max: 4000000000, default: 100000, unit: "0.01 uSv",
+      desc: "Prog dawki skumulowanej; 100000 = 1 mSv. 0 = wylaczony." }
+  - { id: 0x23, name: ALARM_HYST, type: u8, access: rw, storage: nv, min: 0, max: 50, default: 10, unit: "%",
+      desc: "Histereza powrotu ponizej progow mocy dawki." }
+
+  # --- kalibracja (CAL_LOCK) ---
+  - { id: 0x30, name: CAL_CPM_TO_USVH, type: f32, access: rw, storage: nv, min: 0.0001, max: 1.0, default: 0.0057, unit: "uSv/h per CPM", calibration: true,
+      desc: "Wspolczynnik przeliczenia CPM -> uSv/h. Wartosc domyslna jest
+             tymczasowa (typowa dla STS-5/SBM-20) do czasu kalibracji." }
+  - { id: 0x31, name: CAL_DEAD_TIME_US, type: f32, access: rw, storage: nv, min: 0.0, max: 1000.0, default: 190.0, unit: "us", calibration: true,
+      desc: "Czas martwy tuby do korekcji n = m / (1 - m * tau). 0 = bez korekcji." }
+  - { id: 0x32, name: CAL_HV_C0, type: f32, access: rw, storage: nv, min: -50.0, max: 50.0, default: 0.0, unit: "V", calibration: true,
+      desc: "Napiecie anodowe: offset c0 (HV = c1 * HV_nom + c0)." }
+  - { id: 0x33, name: CAL_HV_C1, type: f32, access: rw, storage: nv, min: 0.5, max: 1.5, default: 1.0, unit: "-", calibration: true,
+      desc: "Napiecie anodowe: wzmocnienie c1 wzgledem nominalnego dzielnika 1:1001." }
+  - { id: 0x34, name: CAL_VIN_C0, type: f32, access: rw, storage: nv, min: -1.0, max: 1.0, default: 0.0, unit: "V", calibration: true,
+      desc: "Napiecie zasilania: offset c0 (V = c1 * V_nom + c0)." }
+  - { id: 0x35, name: CAL_VIN_C1, type: f32, access: rw, storage: nv, min: 0.5, max: 1.5, default: 1.0, unit: "-", calibration: true,
+      desc: "Napiecie zasilania: wzmocnienie c1 wzgledem nominalnego dzielnika 11:1." }
+  - { id: 0x36, name: CAL_ISENS_C0, type: f32, access: rw, storage: nv, min: -0.001, max: 0.001, default: 0.0, unit: "A", calibration: true,
+      desc: "Prad zasilania: offset c0 (I = c1 * I_nom + c0)." }
+  - { id: 0x37, name: CAL_ISENS_C1, type: f32, access: rw, storage: nv, min: 0.5, max: 1.5, default: 1.0, unit: "-", calibration: true,
+      desc: "Prad zasilania: wzmocnienie c1 wzgledem nominalnego INA186A4 (G = 200, shunt 0.5 Ohm)." }

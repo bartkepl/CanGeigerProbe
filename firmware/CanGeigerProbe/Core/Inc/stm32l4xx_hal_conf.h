@@ -57,7 +57,7 @@
 /*#define HAL_IWDG_MODULE_ENABLED   */
 /*#define HAL_LTDC_MODULE_ENABLED   */
 /*#define HAL_LCD_MODULE_ENABLED   */
-/*#define HAL_LPTIM_MODULE_ENABLED   */
+#define HAL_LPTIM_MODULE_ENABLED
 /*#define HAL_MMC_MODULE_ENABLED   */
 /*#define HAL_NAND_MODULE_ENABLED   */
 /*#define HAL_NOR_MODULE_ENABLED   */
@@ -111,7 +111,7 @@
   *        This value is the default MSI range value after Reset.
   */
 #if !defined  (MSI_VALUE)
-  #define MSI_VALUE    ((uint32_t)2000000U) /*!< Value of the Internal oscillator in Hz*/
+  #define MSI_VALUE    ((uint32_t)4000000U) /*!< Value of the Internal oscillator in Hz*/
 #endif /* MSI_VALUE */
 /**
   * @brief Internal High Speed oscillator (HSI) value.

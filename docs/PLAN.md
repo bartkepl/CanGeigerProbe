@@ -135,8 +135,9 @@ kanału; brak odpowiedzi na rozgłoszeniowe `SET_TIME_SYNC`; bitmapa
 **Zdolności** (`CAPABILITIES`, zgodne z implementacją — CanBusCommon
 ADR 0001): `TELEMETRY`, `SENSORS`, `PARAMS_NV`, `RTC`, `BOOTLOADER`,
 `TIME_SYNC`, `LIST_PARAMS`, `LIST_CHANNELS`, `COUNTERS`, `SELF_TEST`,
-`CAL_LOCK`, `RANGE_LIMITS`, `ADDR_CONFLICT_DETECT`, `STATUS_EXT`,
-`RADIOMETRY`. Niedeklarowane: `TIME_SOURCE` i `TIME_SYNC_PRECISE` (niżej).
+`CAL_LOCK`, `ADDR_CONFLICT_DETECT`, `STATUS_EXT`, `RADIOMETRY`.
+Niedeklarowane: `TIME_SOURCE` i `TIME_SYNC_PRECISE` (niżej) oraz
+`RANGE_LIMITS` — alarmy radiometryczne są zdarzeniami własnymi.
 Bit deklarowany jest dopiero wtedy, gdy obsługa jest w obrazie — etapami
 E2/E3, nie na zapas.
 
@@ -179,6 +180,7 @@ ogranicza się środkami, które nie naruszają dostępności węzła:
 | Piny wolne | stan analogowy |
 | Pomiar VBAT | nieużywany (mostek pomiarowy wyłączony) |
 
+Decyzję zapisuje [ADR 0002](adr/0002-strategia-poboru-pradu.md).
 Największym odbiornikiem pozostaje transceiver w trybie normalnym. Budżet
 weryfikowany jest pomiarem własnym węzła w etapie E1 i po każdym etapie
 zmieniającym pracę peryferiów.
@@ -201,13 +203,13 @@ dostarczaniem energii — napięcie rośnie bez ograniczenia. Wymagania:
 - czas przewodzenia klucza w granicach wkompilowanych (nasycenie rdzenia,
   prąd szczytowy klucza).
 
-Uzasadnienie i parametry zostaną zapisane w osobnym ADR przed etapem E4.
+Mechanizmy zapisuje [ADR 0003](adr/0003-bezpieczenstwo-generatora-hv.md); wartości liczbowe uzupełnia E4.
 
 ## 7. Etapy
 
 | Etap | Zakres | Wymaga | Kryterium zakończenia |
 |---|---|---|---|
-| **E0** Specyfikacja | podmoduł `common/`; `device.yaml`; konfiguracje CubeMX aplikacji i bootloadera (sekcja 8); szkielet `docs/`; ADR-y: strategia poboru prądu, bezpieczeństwo HV | — | walidator ekosystemu bez błędów, `generate.py --check` aktualne |
+| **E0** Specyfikacja | podmoduł `common/`; `device.yaml`; konfiguracje CubeMX aplikacji i bootloadera (sekcja 8); ADR 0002 (pobór prądu), ADR 0003 (bezpieczeństwo HV) | — | walidator ekosystemu bez błędów, `generate.py --check` aktualne, oba projekty budują się — **zakończony 2026-11-15** |
 | **E1** Uruchomienie sprzętu | szyny zasilania i pobór, SWD, LSE z MFP i autotrim MSI, MCP79410, tory ADC (VIN, I_SENS, VREFINT, temperatura), CAN i terminacja, bootloader i skok do aplikacji, próby wartości R18 | zmontowana płytka | ramki na magistrali, aplikacja wgrana przez bootloader CAN |
 | **E2** Warstwa wspólna | moduły firmware z MPCC: protokół, NVM, bezpieczeństwo i autotest, IWDG, liczniki, wykrywanie konfliktu adresu; odbiorca wspólnej osi czasu poziomu 1 (sekcja 4) z `GET_STATUS_EXT` 13 B; filtry CAN | jw. | `canconf` 1.1.0 poziom `full` (w tym grupa `SYN`, `CMD-016`, `DIS-007`): 0 FAIL; obraz `app-v0.1` w `releases/` |
 | **E3** Tor zliczania | COMP1 → LPTIM1, próg z DAC1, licznik 32-bitowy, CPM, `READ_RAW_COUNTS`; badanie generatorem impulsów podanym na `COMP_GM` | generator impulsów | zgodność z zadaną częstotliwością do ok. 10 kCPS; telemetria rejestrowana przez CanSensorLoggerPi bez zmian w rejestratorze |
@@ -258,7 +260,7 @@ opisane są w kolumnie uwag.
 | COMP1 | Blanking: TIM2_OC3 | |
 | COMP1 | bez wyjścia na pin | COMP1_OUT jest alternatywą PB0 (`EN_I_SENS`) |
 | DAC1 | wyłącznie kanał 1, „connected to on-chip peripherals”, bufor wyłączony | kanał 2 usunięty |
-| LPTIM1 | clock source internal (PCLK), counter source External, Input1 = COMP1 output, filtr 8 taktów, ARR 0xFFFF | |
+| LPTIM1 | w CubeMX: „Counts internal clock events”, Prescaler Div1, Trigger Software | CubeMX w tym trybie nie udostępnia wyboru wejścia, a tryb „external” zajmuje pin LPTIM1_IN1 (PB5). Counter source External, Input1 = COMP1, filtr 8 taktów i ARR 0xFFFF ustawia kod w `USER CODE LPTIM1_Init 2` |
 | LPTIM1 | NVIC: LPTIM1 global | rozszerzenie licznika do 32 bitów |
 | TIM2 | CH3 PWM Generation, prescaler 0, preload ARR i CCR, polaryzacja High | okres i szerokość impulsu ustawia kod; Pulse = 0 |
 | TIM2 | DMA: TIM2_UP → DMA1 Ch2, Memory → Peripheral, Normal, word; NVIC DMA1_Ch2 | seria N impulsów sprzętowo, bez przerwań |

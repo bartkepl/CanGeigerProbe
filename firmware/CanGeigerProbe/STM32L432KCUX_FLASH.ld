@@ -47,7 +47,11 @@ MEMORY
 {
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 48K
   RAM2    (xrw)    : ORIGIN = 0x10000000,   LENGTH = 16K
-  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 256K
+  /* Aplikacja za bootloaderem (16 KB, strony 0..7 — nigdy nie zapisywane przez
+   * aktualizacje aplikacji). FLASH: 0x08004000 .. 0x0803F800; ostatnia strona
+   * (0x0803F800) to NVM konfiguracji. Wymaga VTOR = 0x08004000 (main.c,
+   * USER CODE 1). */
+  FLASH    (rx)    : ORIGIN = 0x08004000,   LENGTH = 0x3B800
 }
 
 /* Sections */
@@ -165,6 +169,19 @@ SECTIONS
     . = ALIGN(4);
     _ebss = .;         /* define a global symbol at bss end */
     __bss_end__ = _ebss;
+  } >RAM
+
+  /* .noinit — sekcja NIE zerowana przez startup; przezywa miekki reset.
+     Uzywana przez wsc_safety do diagnostyki przyczyny resetu (usterki CPU,
+     liczniki startow / petli resetow). Tracona dopiero przy zaniku zasilania. */
+  .noinit (NOLOAD) :
+  {
+    . = ALIGN(4);
+    _snoinit = .;
+    *(.noinit)
+    *(.noinit*)
+    . = ALIGN(4);
+    _enoinit = .;
   } >RAM
 
   /* User_heap_stack section, used to check that there is enough "RAM" Ram  type memory left */
