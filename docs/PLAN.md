@@ -16,8 +16,10 @@ na warstwie wspólnej:
 - podmoduł `common/`, opis urządzenia `protocol/device.yaml`, kod protokołu
   generowany (`common/protocol/generate.py`), zgodność sprawdzana walidatorem
   ekosystemu;
-- wspólny bootloader CAN w wersji wire 1.1, w odmianie bez transportu UART
-  ([ADR 0001](adr/0001-bootloader-bez-uart.md));
+- wspólny bootloader CAN w wersji wire 1.1 — od rewizji 2.1 standardu
+  wyłącznie CAN, dołączany bez zmian
+  ([CanBusCommon ADR 0006](https://github.com/bartkepl/CanBusCommon/blob/main/docs/adr/0006-bootloader-wylacznie-can.md);
+  ADR 0001 sondy zastąpiony);
 - aplikacja oparta na sprawdzonym zestawie modułów firmware węzła MPCC
   (scheduler kooperacyjny, warstwa CAN z oczekiwaniem na miejsce w kolejce,
   NVM we flashu, warstwa bezpieczeństwa i autotestu, IWDG, sterownik
@@ -122,6 +124,14 @@ nadawanie segmentów z oczekiwaniem na miejsce w kolejce; `TransmitFifoPriority`
 włączone w `.ioc` i w kodzie; licznik sekwencji telemetrii indeksowany pozycją
 kanału; brak odpowiedzi na rozgłoszeniowe `SET_TIME_SYNC`; bitmapa
 `CAPABILITIES` zgodna z implementacją.
+
+**Wspólna oś czasu (rewizja 2.1,** `common/docs/czas.md`**).** Sonda jest
+odbiorcą poziomu 1: przyjmuje `SET_TIME_SYNC` od hosta albo od wzorca czasu
+(CanGnssNode) według reguły wyboru źródła, zapamiętuje `ARG` i chwilę
+synchronizacji, wypełnia jawnie pola `TIME_SOURCE` i `TIME_AGE_S` statusu
+rozszerzonego (13 B) i ustawia bit `HEARTBEAT.FLAGS.TIME_SYNCED`. Składnik
+milisekundowy (`MS`) korzysta z podstawy LSE. Poziom 2 (`TIME_SYNC_PRECISE`)
+pozostaje opcjonalny do jego zatwierdzenia pomiarem.
 
 ## 5. Strategia poboru prądu
 
@@ -246,8 +256,10 @@ na PB6/PB7 (tu I2C) i piny nieobecne na tej płytce.
 Po wygenerowaniu, poza CubeMX: folder połączony `Core/Common` →
 `common/bootloader`; `bl_board.h` z szablonu (`BL_NODE_ID 0x30`,
 `BL_DEVICE_TYPE 0x0004`, `BL_VER_MINOR 1`); skrypt linkera `FLASH LENGTH = 16K`;
-wywołanie `bl_core_run()` w `USER CODE 2`; odmiana bez UART wg
-[ADR 0001](adr/0001-bootloader-bez-uart.md).
+wywołanie `bl_core_run(&hcan1)` w `USER CODE 2`. Od rewizji 2.1 standardu
+bootloader jest wyłącznie CAN, więc projekt nie potrzebuje zaślepki UART ani
+symbolu `HAL_UART_MODULE_ENABLED` (ADR 0001 sondy zastąpiony przez
+CanBusCommon ADR 0006).
 
 ## 9. Zagadnienia otwarte
 

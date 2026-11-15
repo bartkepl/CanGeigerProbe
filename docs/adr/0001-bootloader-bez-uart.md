@@ -1,7 +1,15 @@
 # ADR 0001 — Bootloader bez transportu UART
 
-**Stan:** przyjęta
+**Stan:** zastąpiona przez [CanBusCommon ADR 0006](https://github.com/bartkepl/CanBusCommon/blob/main/docs/adr/0006-bootloader-wylacznie-can.md) (2026-11-15)
 **Data:** 2026-11-15
+
+!!! note "Zastąpiona"
+    Rewizja 2.1 standardu usunęła transport UART ze źródeł wspólnych
+    (CanBusCommon ADR 0006). Obejście opisane niżej jest zbędne: projekt
+    bootloadera sondy dołącza `common/bootloader` bez zmian, bez zaślepki
+    `bl_uart_none.c` i bez symbolu `HAL_UART_MODULE_ENABLED`, a w `USER CODE 2`
+    wywołuje `bl_core_run(&hcan1);`. Treść poniżej zostaje jako zapis
+    historyczny.
 **Dotyczy:** `firmware/CanGeigerProbe_BL`, podmoduł `common/bootloader`
 
 ## Kontekst

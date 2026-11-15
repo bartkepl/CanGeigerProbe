@@ -8,4 +8,4 @@ warianty, Decyzja, Konsekwencje.
 
 | Nr | Tytuł | Stan |
 |---|---|---|
-| [0001](0001-bootloader-bez-uart.md) | Bootloader bez transportu UART | przyjęta |
+| [0001](0001-bootloader-bez-uart.md) | Bootloader bez transportu UART | zastąpiona przez CanBusCommon ADR 0006 |
