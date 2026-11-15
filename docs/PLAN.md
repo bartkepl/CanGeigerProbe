@@ -47,8 +47,9 @@ raz nadany nie zmienia znaczenia. Wszystko, co specyficzne dla sondy, opisuje
 `device.yaml` w zakresach device-specific.
 
 Podstawą jest **rewizja 2.1** standardu (profil 2, `meta.revision: "2.1"`,
-podmoduł od commitu `c937c10`): bootloader wyłącznie CAN (CanBusCommon
-ADR 0006) i wspólna oś czasu (CanBusCommon ADR 0007). Odbiór — tester
+podmoduł od commitu `6f5bf52`): bootloader wyłącznie CAN (CanBusCommon
+ADR 0006), wspólna oś czasu (CanBusCommon ADR 0007) i obowiązkowa
+automatyczna retransmisja CAN (CanBusCommon ADR 0008). Odbiór — tester
 `canconf` 1.1.0. Węzeł nie wymaga żadnej zmiany rdzenia; wszystkie
 rozstrzygnięcia tego planu mieszczą się w rdzeniu rewizji 2.1 i w opisie
 urządzenia.
@@ -128,7 +129,10 @@ odpowiadające usterce wykrytej przy migracji wcześniejszych węzłów: ramka
 identyfikacyjna 28 B z jawnie wyzerowanym buforem; bajty zabezpieczające
 `RESET`, `ENTER_BOOTLOADER`, `LOAD_DEFAULTS`; egzekwowanie `CAL_LOCK`;
 nadawanie segmentów z oczekiwaniem na miejsce w kolejce; `TransmitFifoPriority`
-włączone w `.ioc` i w kodzie; licznik sekwencji telemetrii indeksowany pozycją
+włączone w `.ioc` i w kodzie; automatyczna retransmisja sprzętowa
+(`AutoRetransmission = ENABLE`, `NART` = 0) w aplikacji i w bootloaderze —
+CanBusCommon ADR 0008, w obu `.ioc` sondy ustawiona od początku, a wspólne
+źródła bootloadera wymuszają ją niezależnie od `.ioc`; licznik sekwencji telemetrii indeksowany pozycją
 kanału; brak odpowiedzi na rozgłoszeniowe `SET_TIME_SYNC`; bitmapa
 `CAPABILITIES` zgodna z implementacją.
 
@@ -245,7 +249,7 @@ opisane są w kolumnie uwag.
 | RTC, IWDG | nie konfigurowane w CubeMX | IWDG konfigurowany w kodzie; czas z MCP79410 |
 | CAN1 | Prescaler 1, BS1 6 TQ, BS2 1 TQ, SJW 1 → 500 kbit/s, punkt próbkowania 87,5 % | |
 | CAN1 | Transmit FIFO Priority: ENABLE | wymaganie warstwy wspólnej |
-| CAN1 | Time Triggered Communication Mode, Automatic Bus-Off Management, Automatic Wake-Up Mode, Receive FIFO Locked Mode: DISABLE; Automatic Retransmission: ENABLE (No-Automatic Retransmission = DISABLE) | wzorzec MPCC; odzysk po bus-off robi `wsc_can`; TTCM tylko dla poziomu 2 czasu |
+| CAN1 | Time Triggered Communication Mode, Automatic Bus-Off Management, Automatic Wake-Up Mode, Receive FIFO Locked Mode: DISABLE; Automatic Retransmission: ENABLE (No-Automatic Retransmission = DISABLE) | odzysk po bus-off robi `wsc_can`; TTCM tylko dla poziomu 2 czasu; retransmisja obowiązkowa (CanBusCommon ADR 0008) — tu odstępstwo od MPCC, który miał `DISABLE` |
 | CAN1 | NVIC: CAN1_RX0, CAN1_TX | |
 | GPIO | PA9 `CAN_STBY` output, stan początkowy Low | |
 | GPIO | PA10 `CAN_R_CTRL` output, Low | terminację ustawia kod wg parametru |
@@ -299,6 +303,12 @@ symbolu `HAL_UART_MODULE_ENABLED` (ADR 0001 sondy zastąpiony przez
 CanBusCommon ADR 0006).
 
 ## 9. Zagadnienia otwarte
+
+- **Zgłoszenia do warstwy wspólnej** — błędy, niejasności i propozycje
+  (w tym dopisania do rejestrów) trafiają do lokalnej skrzynki
+  `../CanBusCommon/.local/zgloszenia/` (format: `.local/README.md`
+  w CanBusCommon), nie do plików śledzonych przez git w CanBusCommon.
+  Rozstrzyga sesja CanBusCommon.
 
 - **Polaryzacja wyjścia COMP1** — w `.ioc` obecnie Non-inverted: spoczynek
   wysoki, a blanking wymusza stan niski, co w czasie każdej serii flybacka

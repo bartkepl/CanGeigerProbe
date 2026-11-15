@@ -13,5 +13,6 @@ warianty, Decyzja, Konsekwencje.
 | [0003](0003-bezpieczenstwo-generatora-hv.md) | Bezpieczeństwo generatora HV | przyjęta (mechanizmy); wartości w E4 |
 
 Decyzje warstwy wspólnej, z których węzeł korzysta wprost:
-ADR 0006 CanBusCommon (bootloader wyłącznie CAN) i ADR 0007 CanBusCommon
-(wspólna oś czasu — sonda jako odbiorca poziomu 1).
+ADR 0006 CanBusCommon (bootloader wyłącznie CAN), ADR 0007 CanBusCommon
+(wspólna oś czasu — sonda jako odbiorca poziomu 1) i ADR 0008 CanBusCommon
+(obowiązkowa automatyczna retransmisja CAN).

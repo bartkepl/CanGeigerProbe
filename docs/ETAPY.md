@@ -19,7 +19,7 @@ Przeniesienie modułów firmware węzła MPCC i dopasowanie do sondy.
 | Moduł (MPCC) | Zakres w sondzie |
 |---|---|
 | `wsc_sched` | bez zmian — scheduler kooperacyjny |
-| `wsc_can` | bez zmian w logice nadawania; filtry sprzętowe `NODE` ∈ {własny, 0xFF} (ADR 0002), przeładowanie po zmianie `NODE_ID` |
+| `wsc_can` | logika nadawania jak w MPCC (`send_wait`, `TX_DROPPED`); filtry sprzętowe `NODE` ∈ {własny, 0xFF} (ADR 0002), przeładowanie po zmianie `NODE_ID`; **`TX_FRAMES` liczone przy zakończeniu nadania z `TXOK` = 1** (przerwanie CAN1_TX), a nie przy zleceniu — dopuszczone przez CanBusCommon ADR 0008 p. 4, daje licznik rzeczywiście nadanych ramek przy włączonej retransmisji |
 | `wsc_clock` | LSE bypass z MFP, autotrim MSI, praca awaryjna na samym MSI |
 | `wsc_i2c`, `wsc_mcp79410` | bez zmian; dodatkowo odczyt/zapis SRAM (dawka skumulowana, E5) |
 | `wsc_nvm_flash`, `wsc_config` | strona NVM `0x0803F800`; tablica parametrów z `protocol_gen` |
@@ -44,7 +44,11 @@ bezpieczeństwo, autotest, IWDG → ADC i kanały → czas.
 Badanie: `canconf` 1.1.0 poziom `full` na magistrali z MPSWP i MPCC,
 w tym grupa `SYN` z wzorcem czasu symulowanym przez host.
 
-Kryterium: 0 FAIL, obraz `app-v0.1` w `releases/`.
+Przegląd ręczny `CONFORMANCE.md` (CanBusCommon) — m.in. `TransmitFifoPriority`
+i automatyczna retransmisja (ADR 0008) w `main.c` obu projektów.
+
+Kryterium: 0 FAIL, lista kontrolna przeglądu ręcznego odhaczona, obraz
+`app-v0.1` w `releases/`.
 
 ## E3 — Tor zliczania
 
@@ -125,5 +129,7 @@ pozostaje poza planem.
 3. Wersja `app-v1.0` (`fw_version_major` = 1) w `releases/`.
 4. Ewidencja: wpis egzemplarza w `node_addresses.yaml` (sekcja
    `assignments`: adres, UID, wersja), status typu w `device_types.yaml`
-   z `planned` na aktywny — dopisanie do rejestrów CanBusCommon.
+   z `planned` na aktywny — zgłoszenie do skrzynki
+   `../CanBusCommon/.local/zgloszenia/`; dopisanie wykonuje sesja
+   CanBusCommon.
 5. Aktualizacja README i PLAN.md.

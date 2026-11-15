@@ -72,6 +72,10 @@ CAN. Każdy wgrany obraz trafia przed wgraniem do `releases/` z
    (PA10) wysoka. Zmierzyć CANH–CANL bez zasilania magistrali: ≈ 120 Ω
    (2 × 59 Ω + Ron PhotoMOS).
 3. Podłączyć do magistrali z hostem (sama sonda + host, potem z MPSWP i MPCC).
+   Retransmisja jest włączona (CanBusCommon ADR 0008): bez węzła
+   potwierdzającego (host odłączony) ramka bez ACK powtarzana jest bez
+   przerwy, a TEC dochodzi do stanu error-passive — na oscyloskopie ciąg
+   identycznych ramek. To zachowanie oczekiwane, nie usterka.
    Host: `HELLO` na adres 0x30 — odpowiedź z `BL_VER` 1.1, `DEVICE_TYPE`
    0x0004, `NODE_ID` 0x30, `APP_VALID` = 0.
 4. Oscyloskopem: poziomy CANH/CANL (recesywny ≈ 2,5 V, dominujący ≈ 3,5/1,5 V),
@@ -157,6 +161,9 @@ Pomiar amperomierzem zasilacza i torem INA186, Vin = 12 V i 24 V:
 | jw., terminacja włączona | + ok. 4 mA (LED PhotoMOS) |
 | Nadawanie telemetrii co 1 s | szczyty do ok. 20 mA przy 7 V |
 | Bootloader | do ustalenia |
+
+Pomiary wyłącznie z węzłem potwierdzającym na magistrali — bez ACK
+retransmisja nadaje bez przerwy i pobór odpowiada ciągłemu nadawaniu.
 
 ## Zapis wyników — `docs/pomiary/E1.md`
 
