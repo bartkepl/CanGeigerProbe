@@ -25,7 +25,7 @@ na warstwie wspólnej:
   NVM we flashu, warstwa bezpieczeństwa i autotestu, IWDG, sterownik
   MCP79410, tor ADC z filtrem IQM i przeliczeniem ratiometrycznym względem
   VREFINT);
-- odbiór warstwy wspólnej testerem zgodności `canconf`.
+- odbiór warstwy wspólnej testerem zgodności `canconf` 1.1.0.
 
 Numery z rejestrów wspólnych są już przydzielone i nie wymagają rewizji:
 
@@ -36,6 +36,7 @@ Numery z rejestrów wspólnych są już przydzielone i nie wymagają rewizji:
 | Adres bootloadera | `0x30` |
 | Czujniki | `GM_TUBE` (`0x30`), `HV_MONITOR` (`0x31`), `SUPPLY_MON` (`0x11`) |
 | Wielkości | `DOSE_RATE` `0x40`, `CPM` `0x41`, `DOSE_ACC` `0x42`, `TUBE_HV` `0x43`, `SUPPLY_VOLTAGE` `0x12`, `SUPPLY_CURRENT` `0x13` |
+| Zdolność własna | `RADIOMETRY` (bit 18) |
 
 CanBusCommon rozróżnia rdzeń standardu od rejestrów. Rdzeń — układ
 identyfikatora, warstwa uniwersalna komend, zdarzeń i parametrów, kontrakt
@@ -44,7 +45,13 @@ są rozszerzalne przez dopisanie: nowy węzeł dopisuje brakujące wielkości
 i typy czujników przed implementacją (`common/docs/integracja.md` §1), a numer
 raz nadany nie zmienia znaczenia. Wszystko, co specyficzne dla sondy, opisuje
 `device.yaml` w zakresach device-specific.
-| Zdolność | `RADIOMETRY` (bit 18) |
+
+Podstawą jest **rewizja 2.1** standardu (profil 2, `meta.revision: "2.1"`,
+podmoduł od commitu `c937c10`): bootloader wyłącznie CAN (CanBusCommon
+ADR 0006) i wspólna oś czasu (CanBusCommon ADR 0007). Odbiór — tester
+`canconf` 1.1.0. Węzeł nie wymaga żadnej zmiany rdzenia; wszystkie
+rozstrzygnięcia tego planu mieszczą się w rdzeniu rewizji 2.1 i w opisie
+urządzenia.
 
 ## 2. Założenia
 
@@ -125,13 +132,35 @@ włączone w `.ioc` i w kodzie; licznik sekwencji telemetrii indeksowany pozycj�
 kanału; brak odpowiedzi na rozgłoszeniowe `SET_TIME_SYNC`; bitmapa
 `CAPABILITIES` zgodna z implementacją.
 
-**Wspólna oś czasu (rewizja 2.1,** `common/docs/czas.md`**).** Sonda jest
-odbiorcą poziomu 1: przyjmuje `SET_TIME_SYNC` od hosta albo od wzorca czasu
-(CanGnssNode) według reguły wyboru źródła, zapamiętuje `ARG` i chwilę
-synchronizacji, wypełnia jawnie pola `TIME_SOURCE` i `TIME_AGE_S` statusu
-rozszerzonego (13 B) i ustawia bit `HEARTBEAT.FLAGS.TIME_SYNCED`. Składnik
-milisekundowy (`MS`) korzysta z podstawy LSE. Poziom 2 (`TIME_SYNC_PRECISE`)
-pozostaje opcjonalny do jego zatwierdzenia pomiarem.
+**Zdolności** (`CAPABILITIES`, zgodne z implementacją — CanBusCommon
+ADR 0001): `TELEMETRY`, `SENSORS`, `PARAMS_NV`, `RTC`, `BOOTLOADER`,
+`TIME_SYNC`, `LIST_PARAMS`, `LIST_CHANNELS`, `COUNTERS`, `SELF_TEST`,
+`CAL_LOCK`, `RANGE_LIMITS`, `ADDR_CONFLICT_DETECT`, `STATUS_EXT`,
+`RADIOMETRY`. Niedeklarowane: `TIME_SOURCE` i `TIME_SYNC_PRECISE` (niżej).
+Bit deklarowany jest dopiero wtedy, gdy obsługa jest w obrazie — etapami
+E2/E3, nie na zapas.
+
+**Wspólna oś czasu (rewizja 2.1,** `common/docs/czas.md`**).** Dopasowanie
+do sondy:
+
+| Zagadnienie | Rozstrzygnięcie |
+|---|---|
+| Rola | **odbiorca poziomu 1** (`TIME_SYNC`). Sonda nie jest wzorcem czasu: MCP79410 bez dyscypliny zewnętrznej nie jest wzorcem (`czas.md`, wzorzec p. 4), więc `TIME_SOURCE`, `TIME_SYNC_PERIOD` i `TIME_HOLDOVER` nie występują |
+| Przyjęcie | ramka od 4 B, `QUALITY` = 0 dla ramki 6 B; reguła wyboru źródła (jakość nie gorsza od bieżącej albo milczenie bieżącego źródła dłużej niż dwa jego okresy — okres mierzony z odstępu kolejnych ramek tego źródła); brak odpowiedzi |
+| Zegar | `UNIX` + `MS` odniesione do licznika milisekund (SysTick z MSI dostrojonego do LSE); zapis rejestru sekund MCP79410 odłożony do najbliższej pełnej sekundy wyliczonej z `MS` |
+| Status | `TIME_SOURCE` = `ARG` ostatniej przyjętej ramki, `0xFF` od startu do pierwszej synchronizacji; `TIME_AGE_S` nasycane na `0xFFFF`; oba wypełniane jawnie w 13-bajtowej odpowiedzi `GET_STATUS_EXT`; `ERR2.TIME_UNSYNCED` spójne z `TIME_SOURCE = 0xFF` (kontrola `CMD-016`) |
+| `HEARTBEAT` | bit `FLAGS.TIME_SYNCED`, dopóki od przyjęcia minęło mniej niż `valid_s` (3600 s) |
+| `GET_TIME` / `SET_TIME` | układ `time_layout` — pola **binarne**, przeliczenie na BCD w sterowniku MCP79410 |
+| Poziom 2 | **nie deklarowany** — jest provisional, a sonda nie potrzebuje dokładności poniżej milisekundy (zliczenia agregowane w oknach sekundowych). TTCM w CAN1 pozostaje wyłączony; włączenie poziomu 2 w przyszłości wymaga tylko kodu (TTCM ustawiany w trybie inicjalizacji) i trzeciego filtra (niżej) |
+
+**Filtry CAN.** Sonda przyjmuje sprzętowo wyłącznie ramki z polem `NODE`
+(bity 23:16) równym własnemu adresowi albo `0xFF`: dwa filtry 32-bitowe
+z maską `0x00FF0000`. Obejmuje to zapytania do węzła, rozgłoszenia
+(`SET_TIME_SYNC`, wykrywanie) oraz ramki innego węzła nadającego z tym samym
+adresem (wykrywanie konfliktu). Ruch pozostałych węzłów nie budzi rdzenia
+(sekcja 5). Filtry ustawia kod (`wsc_can`), nie CubeMX; po zmianie adresu
+filtr jest przeładowywany. Poziom 2 wymagałby trzeciego filtra na zdarzenia
+`TIME_SYNC`/`TIME_FOLLOW_UP` (`NODE` = adres wzorca).
 
 ## 5. Strategia poboru prądu
 
@@ -141,6 +170,7 @@ ogranicza się środkami, które nie naruszają dostępności węzła:
 | Odbiornik | Środek |
 |---|---|
 | Rdzeń | MSI 4 MHz z autotrimem do LSE, zakres napięcia Range 2, `WFI` między zdarzeniami |
+| Przerwania CAN | filtry sprzętowe na własny adres i `0xFF` (sekcja 4) — ramki innych węzłów nie budzą rdzenia, w odróżnieniu od MPCC (filtr „przyjmij wszystko”) |
 | ADC | pojedyncze skany wyzwalane programowo co okres pomiaru, ADC wyłączany między skanami; zegar ADC z SYSCLK (bez PLLSAI1) |
 | INA186 | włączany na czas pomiaru (`EN_I_SENS` + ustalenie filtra RC τ = 100 µs, ok. 0,5 ms) |
 | Wyjście MFP | podciągnięcie R18 10 kΩ pobiera ok. 165 µA (wyjście open-drain, wypełnienie 50 %); przewidziana zmiana na 47–100 kΩ po sprawdzeniu zboczy na PC14 i stabilności LSE |
@@ -179,7 +209,7 @@ Uzasadnienie i parametry zostaną zapisane w osobnym ADR przed etapem E4.
 |---|---|---|---|
 | **E0** Specyfikacja | podmoduł `common/`; `device.yaml`; konfiguracje CubeMX aplikacji i bootloadera (sekcja 8); szkielet `docs/`; ADR-y: strategia poboru prądu, bezpieczeństwo HV | — | walidator ekosystemu bez błędów, `generate.py --check` aktualne |
 | **E1** Uruchomienie sprzętu | szyny zasilania i pobór, SWD, LSE z MFP i autotrim MSI, MCP79410, tory ADC (VIN, I_SENS, VREFINT, temperatura), CAN i terminacja, bootloader i skok do aplikacji, próby wartości R18 | zmontowana płytka | ramki na magistrali, aplikacja wgrana przez bootloader CAN |
-| **E2** Warstwa wspólna | moduły firmware z MPCC: protokół, NVM, bezpieczeństwo i autotest, IWDG, czas i `SET_TIME_SYNC`, liczniki, wykrywanie konfliktu adresu | jw. | `canconf` poziom `full`: 0 FAIL; obraz `app-v0.1` w `releases/` |
+| **E2** Warstwa wspólna | moduły firmware z MPCC: protokół, NVM, bezpieczeństwo i autotest, IWDG, liczniki, wykrywanie konfliktu adresu; odbiorca wspólnej osi czasu poziomu 1 (sekcja 4) z `GET_STATUS_EXT` 13 B; filtry CAN | jw. | `canconf` 1.1.0 poziom `full` (w tym grupa `SYN`, `CMD-016`, `DIS-007`): 0 FAIL; obraz `app-v0.1` w `releases/` |
 | **E3** Tor zliczania | COMP1 → LPTIM1, próg z DAC1, licznik 32-bitowy, CPM, `READ_RAW_COUNTS`; badanie generatorem impulsów podanym na `COMP_GM` | generator impulsów | zgodność z zadaną częstotliwością do ok. 10 kCPS; telemetria rejestrowana przez CanSensorLoggerPi bez zmian w rejestratorze |
 | **E4** Generator HV | seria w pętli otwartej, pętla zamknięta, łagodny start, limity, `HV_FAULT`; badanie przerwanego dzielnika; badanie blankingu (HV włączone, tuba odłączona — zero zliczeń); tętnienie HV; pobór w funkcji częstości zliczeń | transformator T1 | HV STS-5 stabilne w ±1 %, wszystkie badania bezpieczeństwa zaliczone |
 | **E5** Tuba i dozymetria | charakterystyka plateau STS-5, wybór nastawy HV i progu, czas martwy, korekcja czasu martwego, uśrednianie adaptacyjne, `DOSE_RATE`, `DOSE_ACC`, alarmy; współczynnik tymczasowy | tuba | parametry zapisane z `CAL_LOCK` |
@@ -210,6 +240,7 @@ opisane są w kolumnie uwag.
 | RTC, IWDG | nie konfigurowane w CubeMX | IWDG konfigurowany w kodzie; czas z MCP79410 |
 | CAN1 | Prescaler 1, BS1 6 TQ, BS2 1 TQ, SJW 1 → 500 kbit/s, punkt próbkowania 87,5 % | |
 | CAN1 | Transmit FIFO Priority: ENABLE | wymaganie warstwy wspólnej |
+| CAN1 | Time Triggered Communication Mode, Automatic Bus-Off Management, Automatic Wake-Up Mode, Receive FIFO Locked Mode: DISABLE; Automatic Retransmission: ENABLE (No-Automatic Retransmission = DISABLE) | wzorzec MPCC; odzysk po bus-off robi `wsc_can`; TTCM tylko dla poziomu 2 czasu |
 | CAN1 | NVIC: CAN1_RX0, CAN1_TX | |
 | GPIO | PA9 `CAN_STBY` output, stan początkowy Low | |
 | GPIO | PA10 `CAN_R_CTRL` output, Low | terminację ustawia kod wg parametru |
@@ -262,6 +293,9 @@ symbolu `HAL_UART_MODULE_ENABLED` (ADR 0001 sondy zastąpiony przez
 CanBusCommon ADR 0006).
 
 ## 9. Zagadnienia otwarte
+
+- **Poziom 2 wspólnej osi czasu** — do rozważenia po jego zatwierdzeniu
+  pomiarem w standardzie; dla sondy bez potrzeby funkcjonalnej.
 
 - **Skuteczność blankingu TIM2_OC3** — obejmuje wyłącznie czas przewodzenia
   klucza; zakłócenia przy wyłączeniu klucza wymagają sprawdzenia w E4.
