@@ -54,7 +54,7 @@ Kryterium: 0 FAIL, lista kontrolna przeglądu ręcznego odhaczona, obraz
 
 | Pakiet | Zakres |
 |---|---|
-| Polaryzacja komparatora | COMP1 Output Polarity = **Inverted** (zmiana w `.ioc`): spoczynek niski, impuls wysoki. Blanking wymusza stan niski, więc przy polaryzacji odwrotnej nie tworzy zboczy, a LPTIM liczy zbocze narastające na początku impulsu |
+| Polaryzacja komparatora | COMP1 Output Polarity = **Inverted** (ustawione w `.ioc`): spoczynek niski, impuls wysoki. Blanking wymusza stan niski, więc przy polaryzacji odwrotnej nie tworzy zboczy, a LPTIM liczy zbocze narastające na początku impulsu |
 | Licznik 32-bitowy | LPTIM1 ARR 0xFFFF, przerwanie ARRM zwiększa starsze słowo; odczyt spójny (podwójny odczyt CNT, zgodnie z RM0394) |
 | Próg | `COMP_THRESHOLD` (mV) → DAC1 względem zmierzonego VDDA |
 | CPM | okno przesuwne z sekundowych przyrostów; `AVG_MODE` stałe/adaptacyjne, `AVG_WINDOW_S` |
