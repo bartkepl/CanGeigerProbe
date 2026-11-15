@@ -32,8 +32,16 @@ Numery z rejestrów wspólnych są już przydzielone i nie wymagają rewizji:
 | `DEVICE_TYPE` | `0x0004` (CanGeigerProbe) |
 | Zakres adresów | `0x30`–`0x3F`, domyślny `0x30` |
 | Adres bootloadera | `0x30` |
-| Czujnik | `GM_TUBE` (`0x30`) |
-| Wielkości | `DOSE_RATE` `0x40`, `CPM` `0x41`, `DOSE_ACC` `0x42`, `TUBE_HV` `0x43` |
+| Czujniki | `GM_TUBE` (`0x30`), `HV_MONITOR` (`0x31`), `SUPPLY_MON` (`0x11`) |
+| Wielkości | `DOSE_RATE` `0x40`, `CPM` `0x41`, `DOSE_ACC` `0x42`, `TUBE_HV` `0x43`, `SUPPLY_VOLTAGE` `0x12`, `SUPPLY_CURRENT` `0x13` |
+
+CanBusCommon rozróżnia rdzeń standardu od rejestrów. Rdzeń — układ
+identyfikatora, warstwa uniwersalna komend, zdarzeń i parametrów, kontrakt
+bootloadera — jest zamrożony i nie jest zmieniany na potrzeby węzła. Rejestry
+są rozszerzalne przez dopisanie: nowy węzeł dopisuje brakujące wielkości
+i typy czujników przed implementacją (`common/docs/integracja.md` §1), a numer
+raz nadany nie zmienia znaczenia. Wszystko, co specyficzne dla sondy, opisuje
+`device.yaml` w zakresach device-specific.
 | Zdolność | `RADIOMETRY` (bit 18) |
 
 ## 2. Założenia
@@ -80,9 +88,9 @@ własnych nadaje `device.yaml`, numery wielkości i czujników — wyłącznie
 rejestry wspólne.
 
 **Kanały telemetrii:** `CPM`, `DOSE_RATE`, `DOSE_ACC`, `TUBE_HV`, `MCU_TEMP`,
-`VDDA`, napięcie zasilania (VIN_SENSE), prąd zasilania (INA186).
+`VDDA`, `SUPPLY_VOLTAGE` (VIN_SENSE), `SUPPLY_CURRENT` (INA186).
 
-**Czujniki:** `GM_TUBE`, `MCU`, monitor zasilania.
+**Czujniki:** `GM_TUBE`, `HV_MONITOR`, `SUPPLY_MON`, `MCU`.
 
 **Parametry własne:**
 
@@ -243,13 +251,5 @@ wywołanie `bl_core_run()` w `USER CODE 2`; odmiana bez UART wg
 
 ## 9. Zagadnienia otwarte
 
-- **Wielkości diagnostyczne zasilania.** Napięcie i prąd zasilania nie mają
-  odpowiedników w `registry/quantities.yaml`, a identyfikator kanału
-  telemetrii musi pochodzić z rejestru wspólnego. Istniejące `VOLTAGE_CH*`
-  opisują kanały AFE, a `CURRENT_CH*` mają rozdzielczość 1 mA, niewystarczającą
-  dla poboru rzędu setek µA. Wymaga to dopisania dwóch wielkości do rejestru
-  wspólnego albo rezygnacji z publikowania ich jako kanałów telemetrii.
-- **Typ czujnika monitora zasilania** — ta sama zależność od
-  `registry/sensor_types.yaml`.
 - **Skuteczność blankingu TIM2_OC3** — obejmuje wyłącznie czas przewodzenia
   klucza; zakłócenia przy wyłączeniu klucza wymagają sprawdzenia w E4.
